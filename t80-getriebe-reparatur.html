@@ -119,7 +119,6 @@
             margin-bottom: 30px;
         }
 
-        /* Reparatur Themenblöcke */
         .section-title {
             font-size: 1.25rem;
             color: var(--primary-dark);
@@ -130,6 +129,7 @@
             gap: 10px;
         }
 
+        /* Action Buttons Grid Layout */
         .repair-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -137,30 +137,68 @@
             margin-bottom: 30px;
         }
 
-        .repair-card {
+        /* Action Button Styling */
+        .action-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px;
+            border: 2px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .action-button-content {
+            padding-right: 15px;
+        }
+
+        .action-button h3 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+            font-weight: 700;
+            transition: color 0.25s ease;
+        }
+
+        .action-button p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .action-button .arrow-icon {
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            background: #e8f5e9;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
             transition: all 0.25s ease;
         }
 
-        .repair-card:hover {
-            border-color: var(--accent-green);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transform: translateY(-2px);
+        /* Hover Status */
+        .action-button:hover {
+            border-color: var(--primary-green);
+            background-color: #fcfdfc;
+            box-shadow: 0 8px 20px rgba(45, 106, 79, 0.12);
+            transform: translateY(-3px);
         }
 
-        .repair-card h3 {
-            font-size: 1.05rem;
+        .action-button:hover h3 {
             color: var(--primary-green);
-            margin-bottom: 6px;
         }
 
-        .repair-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.5;
+        .action-button:hover .arrow-icon {
+            background: var(--primary-green);
+            color: #ffffff;
+            transform: translateX(4px);
         }
 
         .footer-section {
@@ -221,21 +259,33 @@
             Wichtige Reparaturthemen
         </div>
 
+        <!-- Action Buttons -->
         <div class="repair-grid">
-            <div class="repair-card">
-                <h3>1. Schaltturm & Schaltgabeln</h3>
-                <p>Einstellen der Arretierung, Austausch verschlissener Schaltgabeln und Erneuern der Federn.</p>
-            </div>
+            
+            <a href="t80-schaltturm.html" class="action-button">
+                <div class="action-button-content">
+                    <h3>1. Schaltturm & Schaltgabeln</h3>
+                    <p>Einstellen der Arretierung, Austausch verschlissener Schaltgabeln und Erneuern der Federn.</p>
+                </div>
+                <div class="arrow-icon">&rarr;</div>
+            </a>
 
-            <div class="repair-card">
-                <h3>2. Lagerung & Wellendichtringe</h3>
-                <p>Erneuern der Kugellager und Dichtringe an Antriebs- und Zapfwelle zur dauerhaften Abdichtung.</p>
-            </div>
+            <a href="t80-lagerung.html" class="action-button">
+                <div class="action-button-content">
+                    <h3>2. Lagerung & Wellendichtringe</h3>
+                    <p>Erneuern der Kugellager und Dichtringe an Antriebs- und Zapfwelle zur dauerhaften Abdichtung.</p>
+                </div>
+                <div class="arrow-icon">&rarr;</div>
+            </a>
 
-            <div class="repair-card">
-                <h3>3. Gehäuseaufbereitung</h3>
-                <p>Reinigung, Rissprüfung, Grundierung und Lackierung des Gussgehäuses.</p>
-            </div>
+            <a href="t80-gehaeuse-aufbereitung.html" class="action-button">
+                <div class="action-button-content">
+                    <h3>3. Gehäuseaufbereitung</h3>
+                    <p>Reinigung, Rissprüfung, Grundierung und Lackierung des Gussgehäuses.</p>
+                </div>
+                <div class="arrow-icon">&rarr;</div>
+            </a>
+
         </div>
 
         <div class="footer-section">
