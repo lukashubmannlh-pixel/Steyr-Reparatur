@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steyr T80 - Getriebe Reparaturen</title>
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --primary-dark: #1b4332;
+            --accent-green: #52b788;
+            --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --card-bg: #ffffff;
+            --text-main: #2b2b2b;
+            --text-muted: #6c757d;
+            --border-color: #e9ecef;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 25px 15px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+            max-width: 680px;
+            width: 100%;
+            padding: 40px 32px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e8f5e9 0%, #d4edda 100%);
+            color: var(--primary-green);
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 6px 18px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 6px rgba(45, 106, 79, 0.1);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        /* Showcase Image Framing */
+        .hero-image-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            margin-bottom: 30px;
+            background-color: #1a1a1a;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-image-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .image-caption-overlay {
+            background: rgba(27, 67, 50, 0.9);
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .intro-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-green);
+            border-radius: 0 12px 12px 0;
+            padding: 18px 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 30px;
+        }
+
+        /* Reparatur Themenblöcke */
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .repair-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .repair-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            transition: all 0.25s ease;
+        }
+
+        .repair-card:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+        }
+
+        .repair-card h3 {
+            font-size: 1.05rem;
+            color: var(--primary-green);
+            margin-bottom: 6px;
+        }
+
+        .repair-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .footer-section {
+            text-align: center;
+            margin-top: 35px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-green);
+            background-color: #e8f5e9;
+        }
+
+        footer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header-section">
+            <span class="badge">Steyr T80 &bull; Getriebe</span>
+            <h1>Reparaturanleitungen</h1>
+            <p class="subtitle">Dokumentation & Instandsetzung des Getriebegehäuses</p>
+        </div>
+
+        <!-- Bildbereich mit Hover-Effekt -->
+        <div class="hero-image-card">
+            <img src="20260826_194810.jpg" alt="Steyr T80 Getriebegehäuse ausgebaut">
+            <div class="image-caption-overlay">
+                ⚙️ Aufbereitetes & gereinigtes Steyr T80 Getriebegehäuse
+            </div>
+        </div>
+
+        <div class="intro-box">
+            In diesem Bereich werden die einzelnen Reparatur- und Überholungsschritte am Getriebe detailliert dokumentiert.
+        </div>
+
+        <div class="section-title">
+            Wichtige Reparaturthemen
+        </div>
+
+        <div class="repair-grid">
+            <div class="repair-card">
+                <h3>1. Schaltturm & Schaltgabeln</h3>
+                <p>Einstellen der Arretierung, Austausch verschlissener Schaltgabeln und Erneuern der Federn.</p>
+            </div>
+
+            <div class="repair-card">
+                <h3>2. Lagerung & Wellendichtringe</h3>
+                <p>Erneuern der Kugellager und Dichtringe an Antriebs- und Zapfwelle zur dauerhaften Abdichtung.</p>
+            </div>
+
+            <div class="repair-card">
+                <h3>3. Gehäuseaufbereitung</h3>
+                <p>Reinigung, Rissprüfung, Grundierung und Lackierung des Gussgehäuses.</p>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <a href="t80-getriebe.html" class="back-link">&larr; Zurück zur Getriebeübersicht</a>
+            <footer>
+                &copy; Steyr Traktor Reparaturprojekt
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+</html>
