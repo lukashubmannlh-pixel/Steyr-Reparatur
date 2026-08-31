@@ -102,4 +102,65 @@
             background-color: var(--primary-green);
             color: #ffffff;
             transform: translateY(-3px);
-            box-shadow: 0 6
+            box-shadow: 0 6px 15px rgba(45, 106, 79, 0.25);
+        }
+
+        .action-btn span.subtext {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-top: 6px;
+            opacity: 0.85;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--primary-green);
+        }
+
+        footer {
+            margin-top: 35px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="badge">Steyr T80 &bull; Getriebe</span>
+        
+        <h1>Getriebe</h1>
+        
+        <p class="subtitle">Wähle die gewünschte Kategorie aus:</p>
+
+        <div class="button-grid">
+            <a href="t80-getriebe-service.html" class="action-btn">
+                Servicearbeiten
+                <span class="subtext">Ölwechsel, Kontrolle & Pflege</span>
+            </a>
+
+            <a href="t80-getriebe-reparatur.html" class="action-btn">
+                Reparaturen
+                <span class="subtext">Schaltung, Lager & Abdichtung</span>
+            </a>
+        </div>
+
+        <a href="t80.html" class="back-link">&larr; Zurück zur Baugruppenübersicht</a>
+
+        <footer>
+            &copy; Steyr Traktor Reparaturprojekt
+        </footer>
+    </div>
+
+</body>
+</html>
