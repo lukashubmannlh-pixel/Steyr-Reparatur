@@ -12,6 +12,9 @@
             --text-main: #2b2b2b;
             --text-muted: #6c757d;
             --border-color: #e9ecef;
+            --disclaimer-bg: #fff3cd;
+            --disclaimer-text: #856404;
+            --disclaimer-border: #ffeeba;
         }
 
         * {
@@ -73,6 +76,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
+            margin-bottom: 30px;
         }
 
         @media (min-width: 480px) {
@@ -112,8 +116,26 @@
             opacity: 0.85;
         }
 
+        /* Disclaimer Styling */
+        .disclaimer-box {
+            background-color: var(--disclaimer-bg);
+            border: 1px solid var(--disclaimer-border);
+            color: var(--disclaimer-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            line-height: 1.4;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .disclaimer-box strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
         footer {
-            margin-top: 35px;
+            margin-top: 25px;
             font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
@@ -150,6 +172,11 @@
                 Steyr T280
                 <span class="subtext">60 PS / 4-Zylinder</span>
             </a>
+        </div>
+
+        <div class="disclaimer-box">
+            <strong>Haftungsausschluss (Disclaimer):</strong>
+            Alle auf dieser Website bereitgestellten Anleitungen, Daten und Berichte dienen ausschließlich zu Informationszwecken. Die Durchführung aller Reparatur- und Wartungsarbeiten erfolgt auf eigene Gefahr und Verantwortung. Es wird keine Haftung für Personen-, Sach- oder Folgeschäden übernommen, die durch die Nutzung oder Umsetzung der hier bereitgestellten Inhalte entstehen.
         </div>
 
         <footer>
