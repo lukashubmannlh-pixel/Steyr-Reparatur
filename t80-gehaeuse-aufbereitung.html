@@ -83,21 +83,14 @@
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             margin-bottom: 30px;
-            background-color: #1a1a1a;
+            background-color: #ffffff;
             border: 1px solid var(--border-color);
         }
 
         .hero-image-card img {
             width: 100%;
-            height: 380px;
-            object-fit: contain;
-            background-color: #111;
+            height: auto;
             display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .hero-image-card:hover img {
-            transform: scale(1.02);
         }
 
         .image-caption-overlay {
@@ -107,7 +100,6 @@
             font-size: 0.88rem;
             font-weight: 500;
             text-align: center;
-            backdrop-filter: blur(4px);
         }
 
         .intro-box {
@@ -128,7 +120,7 @@
             margin-bottom: 20px;
         }
 
-        /* Schritte als vertikale Liste */
+        /* Schritte als einfache, saubere Liste */
         .steps-list {
             display: flex;
             flex-direction: column;
@@ -142,17 +134,127 @@
             border-radius: 14px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            transition: all 0.25s ease;
         }
 
-        .step-card:hover {
-            border-color: var(--accent-green);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(45, 106, 79, 0.08);
-        }
-
-        /* Optimales Bildfeld für vollständige Hochformat-Sichtbarkeit */
-        .img-wrapper {
-            background-color: #0d1117;
+        /* Bild passt sich dynamisch an seine echte Höhe an */
+        .step-card img {
             width: 100%;
-            height: 420
+            height: auto;
+            display: block;
+        }
+
+        .step-content {
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .footer-section {
+            text-align: center;
+            margin-top: 35px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-green);
+            background-color: #e8f5e9;
+        }
+
+        footer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header-section">
+            <span class="badge">Steyr T80 &bull; Getriebe</span>
+            <h1>Gehäuseaufbereitung</h1>
+            <p class="subtitle">Dokumentation der Oberflächenbehandlung & Grundierung</p>
+        </div>
+
+        <div class="hero-image-card">
+            <img src="20260826_194810.jpg" alt="Steyr T80 Getriebegehäuse fertig grundiert">
+            <div class="image-caption-overlay">
+                ⚙️ Aufbereitetes & fertig grundiertes Getriebegehäuse
+            </div>
+        </div>
+
+        <div class="intro-box">
+            In diesem Bereich werden die einzelnen Schritte von der Reinigung über das Schleifen bis hin zur Epoxidharz-Grundierung detailliert gezeigt.
+        </div>
+
+        <div class="section-title">
+            Arbeitsschritte der Aufbereitung
+        </div>
+
+        <div class="steps-list">
+            
+            <div class="step-card">
+                <img src="20260528_134734 - Kopie.jpg" alt="Grobe Reinigung Getriebegehäuse">
+                <div class="step-content">
+                    <h3>1. Grobe Reinigung</h3>
+                    <p>Das Getriebegehäuse wird vor den Arbeiten gründlich gereinigt. Mit Kaltreiniger und Hochdruckreiniger werden jahrzehntealte Fettreste, verharztes Öl und grober Schmutz entfernt.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <img src="20260528_154605.jpg" alt="Schleifen des Gehäuses">
+                <div class="step-content">
+                    <h3>2. Schleifen & Vorbereitung</h3>
+                    <p>Entfernen von losem Altlack und Roststellen. Die Guss-Oberfläche wird mechanisch angeraut, während Dichtflächen und Gewindebohrungen sorgfältig geschützt werden.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <img src="20260528_162226.jpg" alt="Grundiertes Gehäuse">
+                <div class="step-content">
+                    <h3>3. Grundieren</h3>
+                    <p>Nach dem Entfetten mit Silikonentferner erfolgt der Auftrag einer hochwertigen 2K-Epoxidharz-Grundierung als dauerhafter Korrosionsschutz für das Gussgehäuse.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-section">
+            <a href="t80-getriebe-reparatur.html" class="back-link">&larr; Zurück zur Reparaturübersicht</a>
+            <footer>
+                &copy; Steyr Traktor Reparaturprojekt
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+</html>
