@@ -83,20 +83,14 @@
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             margin-bottom: 30px;
-            background-color: #1a1a1a;
+            background-color: #ffffff;
             border: 1px solid var(--border-color);
         }
 
         .hero-image-card img {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
+            height: auto;
             display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .hero-image-card:hover img {
-            transform: scale(1.02);
         }
 
         .image-caption-overlay {
@@ -106,7 +100,6 @@
             font-size: 0.88rem;
             font-weight: 500;
             text-align: center;
-            backdrop-filter: blur(4px);
         }
 
         .intro-box {
@@ -127,11 +120,11 @@
             margin-bottom: 20px;
         }
 
-        /* Schritte als vertikale Liste */
+        /* Schritte als einfache, saubere Liste */
         .steps-list {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 30px;
         }
 
@@ -141,25 +134,19 @@
             border-radius: 14px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            transition: all 0.25s ease;
         }
 
-        .step-card:hover {
-            border-color: var(--accent-green);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(45, 106, 79, 0.08);
-        }
-
-        /* Begrenzte Bildhöhe für kompakte Darstellung */
+        /* Bild passt sich dynamisch an seine echte Höhe an */
         .step-card img {
             width: 100%;
-            height: 220px;
-            object-fit: cover;
+            height: auto;
             display: block;
         }
 
         .step-content {
             padding: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-color);
         }
 
         .step-content h3 {
@@ -217,7 +204,6 @@
             <p class="subtitle">Dokumentation der Oberflächenbehandlung & Grundierung</p>
         </div>
 
-        <!-- Hauptbild oben -->
         <div class="hero-image-card">
             <img src="20260826_194810.jpg" alt="Steyr T80 Getriebegehäuse fertig grundiert">
             <div class="image-caption-overlay">
@@ -235,7 +221,6 @@
 
         <div class="steps-list">
             
-            <!-- Schritt 1 -->
             <div class="step-card">
                 <img src="20260528_134734 - Kopie.jpg" alt="Grobe Reinigung Getriebegehäuse">
                 <div class="step-content">
@@ -244,7 +229,6 @@
                 </div>
             </div>
 
-            <!-- Schritt 2 -->
             <div class="step-card">
                 <img src="20260528_154605.jpg" alt="Schleifen des Gehäuses">
                 <div class="step-content">
@@ -253,7 +237,6 @@
                 </div>
             </div>
 
-            <!-- Schritt 3 -->
             <div class="step-card">
                 <img src="20260528_162226.jpg" alt="Grundiertes Gehäuse">
                 <div class="step-content">
