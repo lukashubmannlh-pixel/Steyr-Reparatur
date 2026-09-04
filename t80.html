@@ -4,139 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steyr T80 - Baugruppen</title>
-    <style>
-        :root {
-            --primary-green: #2d6a4f;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-main: #2b2b2b;
-            --text-muted: #6c757d;
-            --border-color: #e9ecef;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            max-width: 600px;
-            width: 100%;
-            padding: 40px 30px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #e8f5e9;
-            color: var(--primary-green);
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 6px 16px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: #1b4332;
-            margin-bottom: 12px;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        p.subtitle {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-        }
-
-        .button-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-
-        @media (min-width: 480px) {
-            .button-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .action-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--card-bg);
-            border: 2px solid var(--primary-green);
-            color: var(--primary-green);
-            padding: 18px 15px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        }
-
-        .action-btn:hover {
-            background-color: var(--primary-green);
-            color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(45, 106, 79, 0.25);
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 25px;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .back-link:hover {
-            color: var(--primary-green);
-        }
-
-        footer {
-            margin-top: 35px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: underline;
-        }
-
-        footer a:hover {
-            color: var(--primary-green);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Steyr Traktor-Regen -->
+    <div class="steyr-rain">
+        <span class="steyr-drop" style="left: 3%; animation-duration: 7s; animation-delay: 0s;">🚜</span>
+        <span class="steyr-drop" style="left: 8%; animation-duration: 11s; animation-delay: 3s;">🚜</span>
+        <span class="steyr-drop" style="left: 13%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 18%; animation-duration: 6s; animation-delay: 4s;">🚜</span>
+        <span class="steyr-drop" style="left: 23%; animation-duration: 10s; animation-delay: 2s;">🚜</span>
+        <span class="steyr-drop" style="left: 28%; animation-duration: 8s; animation-delay: 5s;">🚜</span>
+        <span class="steyr-drop" style="left: 33%; animation-duration: 12s; animation-delay: 0s;">🚜</span>
+        <span class="steyr-drop" style="left: 38%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
+        <span class="steyr-drop" style="left: 43%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 48%; animation-duration: 11s; animation-delay: 4s;">🚜</span>
+        <span class="steyr-drop" style="left: 53%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
+        <span class="steyr-drop" style="left: 58%; animation-duration: 10s; animation-delay: 5s;">🚜</span>
+        <span class="steyr-drop" style="left: 63%; animation-duration: 8s; animation-delay: 0s;">🚜</span>
+        <span class="steyr-drop" style="left: 68%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
+        <span class="steyr-drop" style="left: 73%; animation-duration: 12s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 78%; animation-duration: 9s; animation-delay: 4s;">🚜</span>
+        <span class="steyr-drop" style="left: 83%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
+        <span class="steyr-drop" style="left: 88%; animation-duration: 11s; animation-delay: 5s;">🚜</span>
+        <span class="steyr-drop" style="left: 93%; animation-duration: 8s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 97%; animation-duration: 10s; animation-delay: 3s;">🚜</span>
+    </div>
+
 
     <div class="container">
         <span class="badge">Steyr T80</span>
