@@ -280,3 +280,44 @@ footer {
 .steyr-drop:nth-child(8)  { left: 75%; animation-duration: 10s; animation-delay: 2s; }
 .steyr-drop:nth-child(9)  { left: 85%; animation-duration: 8s;  animation-delay: 4s; }
 .steyr-drop:nth-child(10) { left: 95%; animation-duration: 12s; animation-delay: 1s; }
+
+/* =========================================================
+   MODELL-AUSWAHL GRID (INDEX.HTML)
+   ========================================================= */
+
+.model-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.model-card {
+    display: block;
+    padding: 14px 18px;
+    background-color: #f4f8f5;
+    border: 1px solid #d0e2d5;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1b4332;
+    transition: all 0.2s ease-in-out;
+}
+
+.model-card:hover {
+    background-color: #e2f0e6;
+    border-color: #2d6a4f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.model-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1b4332;
+}
+
+.model-card span {
+    font-size: 0.9rem;
+    color: #555555;
+}
