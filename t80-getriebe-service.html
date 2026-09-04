@@ -4,175 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steyr T80 - Getriebe Servicearbeiten</title>
-    <style>
-        :root {
-            --primary-green: #2d6a4f;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-main: #2b2b2b;
-            --text-muted: #6c757d;
-            --border-color: #e9ecef;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            max-width: 650px;
-            width: 100%;
-            padding: 40px 30px;
-            border: 1px solid var(--border-color);
-        }
-
-        .header-section {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #e8f5e9;
-            color: var(--primary-green);
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 6px 16px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #1b4332;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-
-        .intro-text {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            text-align: left;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .section-box {
-            text-align: left;
-            margin-bottom: 25px;
-        }
-
-        .section-box h2 {
-            font-size: 1.4rem;
-            color: var(--primary-green);
-            margin-bottom: 15px;
-            border-left: 4px solid var(--primary-green);
-            padding-left: 10px;
-        }
-
-        .info-card {
-            background-color: #f1f3f5;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-        }
-
-        .info-card ul {
-            margin-left: 20px;
-            margin-top: 10px;
-            line-height: 1.6;
-        }
-
-        .info-card ol {
-            margin-left: 20px;
-            margin-top: 10px;
-            line-height: 1.7;
-        }
-
-        .footer-section {
-            text-align: center;
-            margin-top: 35px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-        }
-
-        .back-link {
-            display: inline-block;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .back-link:hover {
-            color: var(--primary-green);
-        }
-
-        footer {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Steyr-Regen Hintergrund -->
+    <div class="steyr-rain">
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+        <div class="steyr-drop">🚜</div>
+    </div>
 
     <div class="container">
         <div class="header-section">
             <span class="badge">Steyr T80 &bull; Service</span>
             <h1>Getriebe Servicearbeiten</h1>
+            <p class="subtitle">Wartung und Pflege für das Getriebe des 15er Steyr</p>
         </div>
 
-        <p class="intro-text">
-            In diesem Abschnitt werden Grundlegende Servicearbeiten am Getriebe des 15er Steyr beschrieben.
-        </p>
+        <div class="intro-box">
+            In diesem Abschnitt werden grundlegende Servicearbeiten am Getriebe des Steyr T80 übersichtlich beschrieben.
+        </div>
 
         <div class="section-box">
-            <h2>Ölwechsel</h2>
+            <h2 class="section-title">Ölwechsel</h2>
             
-            <div class="info-card">
-                <p><strong>Füllmengen & Ölsorte:</strong></p>
-                <ul>
-                    <li><strong>Ölsorte:</strong> Getriebeöl SAE 90 (mineralisch, unlegiert bzw. mild legiert GL-3 / GL-4)</li>
-                    <li><strong>Füllmenge:</strong> ca. 7,5 Liter</li>
-                </ul>
+            <div class="parts-legend">
+                <p style="margin-bottom: 10px;"><strong>Füllmengen & Ölsorte:</strong></p>
+                <div class="parts-grid">
+                    <div class="part-item">
+                        <span class="part-num">1</span>
+                        <span><strong>Ölsorte:</strong> SAE 90 (mineralisch, GL-3 / GL-4)</span>
+                    </div>
+                    <div class="part-item">
+                        <span class="part-num">2</span>
+                        <span><strong>Füllmenge:</strong> ca. 7,5 Liter</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="info-card">
-                <p><strong>Schritt-für-Schritt Anleitung:</strong></p>
-                <ol>
-                    <li>Traktor warmfahren, damit das alte Getriebeöl besser abfließt.</li>
-                    <li>Ablassschraube an der Unterseite des Getriebegehäuses öffnen und Altöl vollständig in einem geeigneten Behälter auffangen.</li>
-                    <li>Dichtring der Ablassschraube prüfen/erneuern und Schraube wieder festziehen.</li>
-                    <li>Einfüllschraube / Ölmessstab oben am Getriebe öffnen.</li>
-                    <li>Frisches Getriebeöl langsam einfüllen, bis der Stand am Ölmessstab die Maximum-Markierung erreicht.</li>
-                    <li>Einfüllschraube wieder schließen und Dichtheit kontrollieren.</li>
-                </ol>
+            <h2 class="section-title">Schritt-für-Schritt Anleitung</h2>
+
+            <div class="steps-list">
+                <div class="step-card">
+                    <h3>1. Traktor warmfahren</h3>
+                    <p>Fahre den Traktor kurz warm, damit das alte Getriebeöl flüssiger wird und Schwebstoffe besser abfließen.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3>2. Altöl ablassen</h3>
+                    <p>Öffne die Ablassschraube an der Unterseite des Getriebegehäuses und fange das Altöl vollständig in einem geeigneten Auffangbehälter auf.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3>3. Ablassschraube montieren</h3>
+                    <p>Prüfe bzw. erneuere den Dichtring der Ablassschraube und ziehe die Schraube wieder ordnungsgemäß fest.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3>4. Einfüllöffnung öffnen</h3>
+                    <p>Öffne die Einfüllschraube bzw. ziehe den Ölmessstab an der Oberseite des Getriebes heraus.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3>5. Frisches Öl auffüllen</h3>
+                    <p>Fülle das frische Getriebeöl langsam ein, bis der Stand am Ölmessstab exakt die Maximum-Markierung erreicht.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3>6. Kontrolle & Abschluss</h3>
+                    <p>Verschließe die Einfüllöffnung sorgfältig und führe eine Dichtheitskontrolle durch.</p>
+                </div>
             </div>
         </div>
 
         <div class="footer-section">
             <a href="t80-getriebe.html" class="back-link">&larr; Zurück zur Getriebeübersicht</a>
-           <div class="footer-section">
             <footer>
                 <a href="index.html" style="color: inherit; text-decoration: none; margin-right: 10px;" title="Zur Hauptseite">🏠</a>
                 &copy; Steyr Traktor Reparaturprojekt &bull; <a href="impressum.html" style="color: inherit;">Impressum</a>
