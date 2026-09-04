@@ -324,18 +324,18 @@ footer {
 /* Layout für die Schritt-Kacheln */
 .step-card {
     display: flex;
-    flex-direction: column; /* Bild oben, Text unten */
+    flex-direction: column;
     overflow: hidden;
     margin-bottom: 20px;
 }
 
-/* Bildgrößen anpassen und Abschneiden verhindern */
+/* Bildgrößen anpassen OHNE Abschneiden */
 .step-card img, 
 .hero-image-card img {
     width: 100%;
-    height: 300px;         /* Feste Höhe für einheitliche Kacheln */
-    object-fit: cover;     /* Passt das Bild sauber an */
-    object-position: center;
+    max-height: 500px;     /* Setzt eine Obergrenze, damit es nicht zu riesig wird */
+    height: auto;          /* Behält das originale Seitenverhältnis bei */
+    object-fit: contain;   /* Zeigt IMMER das komplette Bild an */
     border-radius: 8px;
     display: block;
 }
