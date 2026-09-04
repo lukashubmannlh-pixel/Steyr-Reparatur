@@ -24,6 +24,8 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 25px 15px;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .container {
@@ -34,6 +36,8 @@ body {
     width: 100%;
     padding: 40px 32px;
     border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 10;
 }
 
 .header-section {
@@ -232,3 +236,46 @@ footer {
     color: var(--text-muted);
     margin-top: 15px;
 }
+
+/* =========================================================
+   STEYR-REGEN HINTERGRUND-EFFEKT
+   ========================================================= */
+
+.steyr-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.steyr-drop {
+    position: absolute;
+    top: -60px;
+    font-size: 28px;
+    opacity: 0.25;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+.steyr-drop:nth-child(1)  { left: 3%;  animation-duration: 7s;  animation-delay: 0s; }
+.steyr-drop:nth-child(2)  { left: 12%; animation-duration: 10s; animation-delay: 2s; }
+.steyr-drop:nth-child(3)  { left: 22%; animation-duration: 6s;  animation-delay: 4s; }
+.steyr-drop:nth-child(4)  { left: 32%; animation-duration: 9s;  animation-delay: 1s; }
+.steyr-drop:nth-child(5)  { left: 42%; animation-duration: 8s;  animation-delay: 5s; }
+.steyr-drop:nth-child(6)  { left: 52%; animation-duration: 11s; animation-delay: 3s; }
+.steyr-drop:nth-child(7)  { left: 62%; animation-duration: 7s;  animation-delay: 6s; }
+.steyr-drop:nth-child(8)  { left: 72%; animation-duration: 10s; animation-delay: 2s; }
+.steyr-drop:nth-child(9)  { left: 82%; animation-duration: 8s;  animation-delay: 4s; }
+.steyr-drop:nth-child(10) { left: 92%; animation-duration: 12s; animation-delay: 1s; }
