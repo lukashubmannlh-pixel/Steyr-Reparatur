@@ -86,8 +86,10 @@ h1 {
 
 .hero-image-card img {
     width: 100%;
-    height: auto;
+    max-height: 280px;
+    object-fit: contain;
     display: block;
+    margin: 0 auto;
     transition: transform 0.4s ease;
 }
 
@@ -176,6 +178,9 @@ h1 {
     border-radius: 14px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .step-card h3 {
@@ -191,7 +196,18 @@ h1 {
     line-height: 1.5;
 }
 
-/* Styling für Bilder innerhalb der Schritte */
+/* Kompaktes Bild-Styling für Schritt-Kacheln */
+.step-card img {
+    width: 100%;
+    max-width: 300px;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin: 15px auto 0 auto;
+}
+
+/* Styling für Container innerhalb der Schritte */
 .step-image-container {
     margin-top: 15px;
     border-radius: 12px;
@@ -202,8 +218,15 @@ h1 {
 
 .step-image-container img {
     width: 100%;
-    height: auto;
+    max-height: 250px;
+    object-fit: contain;
     display: block;
+    margin: 0 auto;
+}
+
+/* Automatische Ausrichtung für Smartphone-Fotos */
+img {
+    image-orientation: from-image;
 }
 
 .footer-section {
@@ -248,7 +271,7 @@ footer {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: -1; /* -1 stellt sicher, dass der Regen WIRKLICH im Hintergrund ist */
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -269,7 +292,6 @@ footer {
     }
 }
 
-/* Verteilung der Traktoren über die gesamte Bildschirmbreite (left %) */
 .steyr-drop:nth-child(1)  { left: 5%;  animation-duration: 7s;  animation-delay: 0s; }
 .steyr-drop:nth-child(2)  { left: 15%; animation-duration: 10s; animation-delay: 2s; }
 .steyr-drop:nth-child(3)  { left: 25%; animation-duration: 6s;  animation-delay: 4s; }
@@ -320,27 +342,4 @@ footer {
 .model-card span {
     font-size: 0.9rem;
     color: #555555;
-}
-/* Layout für die Schritt-Kacheln */
-.step-card {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-/* Bildgrößen anpassen OHNE Abschneiden */
-.step-card img, 
-.hero-image-card img {
-    width: 100%;
-    max-height: 500px;     /* Setzt eine Obergrenze, damit es nicht zu riesig wird */
-    height: auto;          /* Behält das originale Seitenverhältnis bei */
-    object-fit: contain;   /* Zeigt IMMER das komplette Bild an */
-    border-radius: 8px;
-    display: block;
-}
-
-/* Automatische Ausrichtung für Smartphone-Fotos */
-img {
-    image-orientation: from-image;
 }
