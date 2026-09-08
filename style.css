@@ -476,3 +476,21 @@ footer {
 .search-container input:hover {
     cursor: pointer !important;
 }
+/* ==========================================
+   NOTFALL-FIX: CURSOR ERZWINGEN
+   ========================================== */
+
+/* Überschreibt jeden Unsichtbarkeits-Befehl im gesamten Dokument */
+html, body, *, *::before, *::after {
+    cursor: auto !important;
+}
+
+/* Klickbare Elemente bekommen garantiert die Hand */
+a, button, input, img, .model-card, .search-result-item {
+    cursor: pointer !important;
+}
+
+/* Texteingabe bekommt den Textzeiger */
+input[type="text"] {
+    cursor: text !important;
+}
