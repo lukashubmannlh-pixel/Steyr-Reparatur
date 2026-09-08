@@ -5,38 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steyr T80 - Kupplungsdrückmechanismus</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
 </head>
 <body>
 
+    <!-- LIGHTBOX OVERLAY -->
     <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
-</div>
+        <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
+    </div>
 
+    <!-- DARK MODE BUTTON (NUR RECHTS OBEN) -->
     <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
     
-   <!-- Steyr Traktor-Regen (20 Traktoren) -->
-<div class="steyr-rain">
-    <span class="steyr-drop" style="left: 3%; animation-duration: 7s; animation-delay: 0s;">🚜</span>
-    <span class="steyr-drop" style="left: 8%; animation-duration: 11s; animation-delay: 3s;">🚜</span>
-    <span class="steyr-drop" style="left: 13%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
-    <span class="steyr-drop" style="left: 18%; animation-duration: 6s; animation-delay: 4s;">🚜</span>
-    <span class="steyr-drop" style="left: 23%; animation-duration: 10s; animation-delay: 2s;">🚜</span>
-    <span class="steyr-drop" style="left: 28%; animation-duration: 8s; animation-delay: 5s;">🚜</span>
-    <span class="steyr-drop" style="left: 33%; animation-duration: 12s; animation-delay: 0s;">🚜</span>
-    <span class="steyr-drop" style="left: 38%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
-    <span class="steyr-drop" style="left: 43%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
-    <span class="steyr-drop" style="left: 48%; animation-duration: 11s; animation-delay: 4s;">🚜</span>
-    <span class="steyr-drop" style="left: 53%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
-    <span class="steyr-drop" style="left: 58%; animation-duration: 10s; animation-delay: 5s;">🚜</span>
-    <span class="steyr-drop" style="left: 63%; animation-duration: 8s; animation-delay: 0s;">🚜</span>
-    <span class="steyr-drop" style="left: 68%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
-    <span class="steyr-drop" style="left: 73%; animation-duration: 12s; animation-delay: 1s;">🚜</span>
-    <span class="steyr-drop" style="left: 78%; animation-duration: 9s; animation-delay: 4s;">🚜</span>
-    <span class="steyr-drop" style="left: 83%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
-    <span class="steyr-drop" style="left: 88%; animation-duration: 11s; animation-delay: 5s;">🚜</span>
-    <span class="steyr-drop" style="left: 93%; animation-duration: 8s; animation-delay: 1s;">🚜</span>
-    <span class="steyr-drop" style="left: 97%; animation-duration: 10s; animation-delay: 3s;">🚜</span>
-</div>
+    <!-- STEYR TRAKTOR-REGEN -->
+    <div class="steyr-rain">
+        <span class="steyr-drop" style="left: 3%; animation-duration: 7s; animation-delay: 0s;">🚜</span>
+        <span class="steyr-drop" style="left: 8%; animation-duration: 11s; animation-delay: 3s;">🚜</span>
+        <span class="steyr-drop" style="left: 13%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 18%; animation-duration: 6s; animation-delay: 4s;">🚜</span>
+        <span class="steyr-drop" style="left: 23%; animation-duration: 10s; animation-delay: 2s;">🚜</span>
+        <span class="steyr-drop" style="left: 28%; animation-duration: 8s; animation-delay: 5s;">🚜</span>
+        <span class="steyr-drop" style="left: 33%; animation-duration: 12s; animation-delay: 0s;">🚜</span>
+        <span class="steyr-drop" style="left: 38%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
+        <span class="steyr-drop" style="left: 43%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 48%; animation-duration: 11s; animation-delay: 4s;">🚜</span>
+        <span class="steyr-drop" style="left: 53%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
+        <span class="steyr-drop" style="left: 58%; animation-duration: 10s; animation-delay: 5s;">🚜</span>
+        <span class="steyr-drop" style="left: 63%; animation-duration: 8s; animation-delay: 0s;">🚜</span>
+        <span class="steyr-drop" style="left: 68%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
+        <span class="steyr-drop" style="left: 73%; animation-duration: 12s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 78%; animation-duration: 9s; animation-delay: 4s;">🚜</span>
+        <span class="steyr-drop" style="left: 83%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
+        <span class="steyr-drop" style="left: 88%; animation-duration: 11s; animation-delay: 5s;">🚜</span>
+        <span class="steyr-drop" style="left: 93%; animation-duration: 8s; animation-delay: 1s;">🚜</span>
+        <span class="steyr-drop" style="left: 97%; animation-duration: 10s; animation-delay: 3s;">🚜</span>
+    </div>
 
     <div class="container">
 
@@ -76,7 +83,7 @@
             </div>
         </div>
 
-        <div class="section-title">
+        <div class="section-title" style="margin-top: 25px;">
             Schritt-für-Schritt Zusammenbau
         </div>
 
@@ -94,24 +101,20 @@
 
             <div class="step-card">
                 <h3>Schritt 3: Fixierung der Ausrückgabel</h3>
-                <p>Die Rückholfeder (5) muss richtig auf die Kupplungspedalwelle (2) aufgeschoben werden. Dabei den langen Teil der Feder nach unten richten, 
-                    da er gegen das Gehäuse drückt. Das kurze Ende der Feder (5) muss anschließend nach vorne gespannt werden, sodass die Feder (5) gegen die Ausrückgabel (4) drückt. 
-                    Hierfür die Feder (5) richtig aufschieben und anschließend die Ausrückgabel (4) nachschieben (da die Ausrückgabel und Kupplungspedalwelle über eine Stirnverzahnung miteinander verbunden sind, 
-                    ist es sinnvoll, die zwei Teile vor dem Montieren zusammenzuschieben und eine Markierung zu machen, um sie anschließend reibungslos aufeinander schieben zu können). Die Fixierschraube (9) am besten als Letztes einbauen, da sie sonst stört. 
-                    Anschließend die Feder (5) vorspannen (Schraubendreher für mehr Hebelkraft nutzen) und danach die Ausrückgabel (4) nachschieben. Achtung!!! Vor dem Durchschieben der ganzen Kupplungspedalwelle den Sicherungsring aufschieben und danach die Welle in den 2ten Lagersitz einschieben. </p>
+                <p>Die Rückholfeder (5) muss richtig auf die Kupplungspedalwelle (2) aufgeschoben werden. Dabei den langen Teil der Feder nach unten richten, da er gegen das Gehäuse drückt. Das kurze Ende der Feder (5) muss anschließend nach vorne gespannt werden, sodass die Feder (5) gegen die Ausrückgabel (4) drückt. Hierfür die Feder (5) richtig aufschieben und anschließend die Ausrückgabel (4) nachschieben (da die Ausrückgabel und Kupplungspedalwelle über eine Stirnverzahnung miteinander verbunden sind, ist es sinnvoll, die zwei Teile vor dem Montieren zusammenzuschieben und eine Markierung zu machen, um sie anschließend reibungslos aufeinander schieben zu können). Die Fixierschraube (9) am besten als Letztes einbauen, da sie sonst stört. Anschließend die Feder (5) vorspannen (Schraubendreher für mehr Hebelkraft nutzen) und danach die Ausrückgabel (4) nachschieben. Achtung!!! Vor dem Durchschieben der ganzen Kupplungspedalwelle den Sicherungsring aufschieben und danach die Welle in den 2ten Lagersitz einschieben.</p>
                 
                 <!-- Bild 1 mit Bildunterschrift -->
-                <div class="step-image-container">
+                <div class="step-image-container" style="margin-top: 15px;">
                     <img src="20260901_134952.jpg" alt="Position der Rückholfeder">
-                    <div style="background-color: #f8f9fa; color: var(--text-muted); font-size: 0.85rem; padding: 8px 12px; text-align: center; border-top: 1px solid var(--border-color);">
+                    <div style="background-color: var(--card-sub-bg); color: var(--text-muted); font-size: 0.85rem; padding: 8px 12px; text-align: center; border-top: 1px solid var(--border-color);">
                         Position der Rückholfeder
                     </div>
                 </div>
 
                 <!-- Bild 2 mit Bildunterschrift -->
-                <div class="step-image-container">
+                <div class="step-image-container" style="margin-top: 15px;">
                     <img src="sicherungsring..png" alt="Sicherungsring DIN 471">
-                    <div style="background-color: #f8f9fa; color: var(--text-muted); font-size: 0.85rem; padding: 8px 12px; text-align: center; border-top: 1px solid var(--border-color);">
+                    <div style="background-color: var(--card-sub-bg); color: var(--text-muted); font-size: 0.85rem; padding: 8px 12px; text-align: center; border-top: 1px solid var(--border-color);">
                         Sicherungsring DIN 471
                     </div>
                 </div>
@@ -126,47 +129,44 @@
 
         <div class="footer-section">
             <a href="t80-getriebe-reparatur.html" class="back-link">&larr; Zurück zur Reparaturübersicht</a>
-            <div class="footer-section">
-            <footer>
+            <footer style="margin-top: 20px;">
                 <a href="index.html" style="color: inherit; text-decoration: none; margin-right: 10px;" title="Zur Hauptseite">🏠</a>
                 &copy; Steyr Traktor Reparaturprojekt &bull; <a href="impressum.html" style="color: inherit;">Impressum</a>
             </footer>
         </div>
 
     </div>
-<script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme');
 
-    // Gespeichertes Theme beim Laden anwenden
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        toggleBtn.textContent = '☀️ Light Mode';
-    }
-    
-    document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('click', () => {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-    });
-});
+    <!-- JAVASCRIPT -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
 
-    // Klick-Event zum Umschalten
-    toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
-        let theme = 'light';
-        if (document.body.classList.contains('dark-mode')) {
-            theme = 'dark';
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
             toggleBtn.textContent = '☀️ Light Mode';
-        } else {
-            toggleBtn.textContent = '🌙 Dark Mode';
         }
         
-        localStorage.setItem('theme', theme);
-    });
-</script>
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            let theme = 'light';
+            if (document.body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                toggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                toggleBtn.textContent = '🌙 Dark Mode';
+            }
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 </body>
 </html>
