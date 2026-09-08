@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehlersuche & Diagnose - Steyr Traktor Archiv</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+
+    <a href="troubleshooting.html" class="trouble-btn">🔧 Finde den Fehler</a>
+    <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+
+    <div class="container">
+
+        <nav class="breadcrumb">
+            <a href="index.html">Hauptseite</a>
+            <span class="separator">›</span>
+            <span class="current">Fehlersuche & Diagnose</span>
+        </nav>
+
+        <div class="header-section">
+            <span class="badge">Werkstatt-Diagnose</span>
+            <h1>Fehlersuche & Problembehebung</h1>
+            <p class="subtitle">Wähle die Baugruppe aus, um Ursachen und Reparaturanleitungen zu finden:</p>
+            
+            <div class="search-container">
+                <input type="text" id="trouble-search" placeholder="🔍 Symptom oder Bauteil suchen (z. B. Rauch, Gang springt raus)..." onkeyup="filterTrouble()">
+            </div>
+        </div>
+
+        <!-- Baugruppe: MOTOR -->
+        <h2 class="section-title">🚜 Motor & Kraftstoffsystem</h2>
+        <div class="trouble-list">
+            
+            <div class="trouble-card" data-search="motor startet nicht anlasser dreht schwer rauch diesel luft">
+                <div class="trouble-header">
+                    <h3>Motor startet nicht / dreht nur schwer durch</h3>
+                    <span class="time-tag">⏱️ 30 Min. - 2 Std.</span>
+                </div>
+                <p><strong>Mögliche Ursache:</strong> Batterie entladen, Luft im Dieselsystem oder Anlasser-Kollektor verschmutzt.</p>
+                <p><strong>Behebung:</strong> Kraftstoffsystem am Filter/Einspritzpumpe entlüften. Batterie-Spannung prüfen und Masseanschlüsse reinigen.</p>
+            </div>
+
+            <div class="trouble-card" data-search="starker schwarzer rauch qualm leistung verlust">
+                <div class="trouble-header">
+                    <h3>Starker schwarzer Rauch unter Last</h3>
+                    <span class="time-tag">⏱️ 1 - 3 Std.</span>
+                </div>
+                <p><strong>Mögliche Ursache:</strong> Luftfilter verstopft, Einspritzdüse verkohlt oder Einspritzzeitpunkt verstellt.</p>
+                <p><strong>Behebung:</strong> Luftfilter reinigen/wechseln, Einspritzdüsen ausbauen und Spritzbild/Druck prüfen lassen.</p>
+            </div>
+
+            <div class="trouble-card" data-search="weisser rauch kühlwasser zylinderkopf dichtung">
+                <div class="trouble-header">
+                    <h3>Weißer Rauch aus dem Auspuff</h3>
+                    <span class="time-tag">⏱️ 3 - 6 Std.</span>
+                </div>
+                <p><strong>Mögliche Ursache:</strong> Kühlwasser tritt in den Verbrennungsraum ein (Zylinderkopfdichtung defekt).</p>
+                <p><strong>Behebung:</strong> Zylinderkopf demontieren, auf Verzug prüfen, Kopfdichtung erneuern und mit korrektem Drehmoment anziehen.</p>
+            </div>
+
+        </div>
+
+        <!-- Baugruppe: GETRIEBE & KUPPLUNG -->
+        <h2 class="section-title" style="margin-top: 35px;">⚙️ Getriebe, Kupplung & Zapfwelle</h2>
+        <div class="trouble-list">
+
+            <div class="trouble-card" data-search="gang springt raus schaltturm getriebe arretierung feder">
+                <div class="trouble-header">
+                    <h3>Gang springt unter Belastung raus</h3>
+                    <span class="time-tag">⏱️ 2 - 4 Std.</span>
+                </div>
+                <p><strong>Mögliche Ursache:</strong> Arretierungsfeder im Schaltturm gebrochen oder Schaltgabel abgenutzt.</p>
+                <p><strong>Behebung:</strong> Schaltturm demontieren, Arretierungsbolzen/-federn prüfen und ggf. austauschen.</p>
+            </div>
+
+            <div class="trouble-card" data-search="kupplung rutscht durch beschleunigt nicht schwungrad">
+                <div class="trouble-header">
+                    <h3>Kupplung rutscht durch</h3>
+                    <span class="time-tag">⏱️ 4 - 8 Std.</span>
+                </div>
+                <p><strong>Mögliche Ursache:</strong> Kupplungsspiel falsch eingestellt, Belag verschlissen oder verölt (Wellendichtring undicht).</p>
+                <p><strong>Behebung:</strong> Kupplungsgestänge nachstellen. Falls verölt: Traktor trennen und Wellendichtring an Kurbelwelle/Getriebewelle tauschen.</p>
+            </div>
+
+            <div class="trouble-card" data-search="getriebe laute geräusche heulen lager simmerring">
+                <div class="trouble-header">
+                    <h3>Mahlendes oder heulendes Getriebegeräusch</h3>
+                    <span class="time-tag">⏱️ 5 - 12 Std.</span>
+                </div>
+                <p><strong>Mögliche Ursache:</strong> Zu wenig Getriebeöl oder verschlissene Rillenkugellager/Vorgelege-Lager.</p>
+                <p><strong>Behebung:</strong> Ölstand prüfen (SAE 90). Bei spürbarem Spiel Wellen ausbauen und Lagerung erneuern.</p>
+            </div>
+
+        </div>
+
+        <div class="footer-section">
+            <footer>
+                &copy; Steyr Traktor Reparaturprojekt &bull; <a href="impressum.html" style="color: inherit;">Impressum</a>
+            </footer>
+        </div>
+
+    </div>
+
+    <script>
+        // Dark Mode Steuerung
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Light Mode';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            let theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            toggleBtn.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Live-Filter für Fehlersuche
+        function filterTrouble() {
+            const query = document.getElementById('trouble-search').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.trouble-card');
+
+            cards.forEach(card => {
+                const searchData = card.getAttribute('data-search') || '';
+                const text = card.innerText.toLowerCase();
+                if (searchData.includes(query) || text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
