@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steyr Traktor Archiv</title>
+    <title>Steyr Traktor Reparatur Archiv</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Blitz-Schutz gegen Flimmern beim Seitenwechsel -->
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode');
@@ -15,63 +13,32 @@
 </head>
 <body>
 
-    <!-- Top-Buttons oben rechts -->
-<div class="top-nav-buttons">
-    <a href="typenunterschiede.html" class="top-btn spec-btn">🚜 Typenunterschiede</a>
-    <a href="troubleshooting.html" class="top-btn trouble-btn">🔧 Finde den Fehler</a>
-    <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
-</div>
-
-    <!-- Button oben rechts für den Troubleshooting-Guide -->
-<a href="troubleshooting.html" class="trouble-btn">🔧 Finde den Fehler</a>
-<button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
-
-    <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
-
-    <!-- Steyr Traktor-Regen -->
-    <div class="steyr-rain">
-        <span class="steyr-drop" style="left: 3%; animation-duration: 7s; animation-delay: 0s;">🚜</span>
-        <span class="steyr-drop" style="left: 8%; animation-duration: 11s; animation-delay: 3s;">🚜</span>
-        <span class="steyr-drop" style="left: 13%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
-        <span class="steyr-drop" style="left: 18%; animation-duration: 6s; animation-delay: 4s;">🚜</span>
-        <span class="steyr-drop" style="left: 23%; animation-duration: 10s; animation-delay: 2s;">🚜</span>
-        <span class="steyr-drop" style="left: 28%; animation-duration: 8s; animation-delay: 5s;">🚜</span>
-        <span class="steyr-drop" style="left: 33%; animation-duration: 12s; animation-delay: 0s;">🚜</span>
-        <span class="steyr-drop" style="left: 38%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
-        <span class="steyr-drop" style="left: 43%; animation-duration: 9s; animation-delay: 1s;">🚜</span>
-        <span class="steyr-drop" style="left: 48%; animation-duration: 11s; animation-delay: 4s;">🚜</span>
-        <span class="steyr-drop" style="left: 53%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
-        <span class="steyr-drop" style="left: 58%; animation-duration: 10s; animation-delay: 5s;">🚜</span>
-        <span class="steyr-drop" style="left: 63%; animation-duration: 8s; animation-delay: 0s;">🚜</span>
-        <span class="steyr-drop" style="left: 68%; animation-duration: 7s; animation-delay: 3s;">🚜</span>
-        <span class="steyr-drop" style="left: 73%; animation-duration: 12s; animation-delay: 1s;">🚜</span>
-        <span class="steyr-drop" style="left: 78%; animation-duration: 9s; animation-delay: 4s;">🚜</span>
-        <span class="steyr-drop" style="left: 83%; animation-duration: 6s; animation-delay: 2s;">🚜</span>
-        <span class="steyr-drop" style="left: 88%; animation-duration: 11s; animation-delay: 5s;">🚜</span>
-        <span class="steyr-drop" style="left: 93%; animation-duration: 8s; animation-delay: 1s;">🚜</span>
-        <span class="steyr-drop" style="left: 97%; animation-duration: 10s; animation-delay: 3s;">🚜</span>
+    <!-- OBENE BUTTON-LEISTE (Fest positioniert) -->
+    <div class="top-nav-buttons">
+        <a href="typenunterschiede.html" class="top-btn spec-btn">🚜 Typenunterschiede</a>
+        <a href="troubleshooting.html" class="top-btn trouble-btn">🔧 Finde den Fehler</a>
     </div>
 
-    <!-- Lightbox Overlay zum Vergrößern/Verkleinern -->
-    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-        <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
-    </div>
+    <!-- DARK MODE BUTTON (Oben rechts) -->
+    <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
 
+    <!-- ZENTRALER HAUPT-CONTAINER -->
     <div class="container">
 
         <div class="header-section">
             <span class="badge">Steyr Traktor Archiv</span>
             <h1>Steyr Traktor Reparaturen</h1>
             <p class="subtitle">Wähle dein Traktormodell aus, um Anleitungen und Dokumente zu sehen:</p>
-            
-            <!-- Live-Suchleiste mit Pop-up -->
+
+            <!-- SUCHLEISTE MIT POPUP -->
             <div class="search-container">
-                <input type="text" id="model-search" placeholder="🔍 Modell, Bauteil oder Thema suchen (z. B. Lager, Getriebe)..." autocomplete="off" oninput="liveSearch()">
+                <input type="text" id="site-search" placeholder="🔍 Modell, Bauteil oder Thema suchen (z. B. Lager, Getriebe)..." autocomplete="off">
                 <div id="search-results" class="search-results-popup"></div>
             </div>
         </div>
 
-        <div class="model-grid" id="model-grid">
+        <!-- MODELL-ÜBERSICHT -->
+        <div class="model-grid">
             <a href="t80.html" class="model-card">
                 <h3>Steyr T80</h3>
                 <span>15 PS / 1-Zylinder</span>
@@ -89,8 +56,9 @@
                 <span>60 PS / 4-Zylinder</span>
             </a>
         </div>
-        
-        <div class="intro-box" style="margin-top: 25px;">
+
+        <!-- INTRO / DISCLAIMER -->
+        <div class="intro-box">
             <strong>Haftungsausschluss (Disclaimer):</strong> Alle auf dieser Website bereitgestellten Anleitungen, Daten und Berichte dienen ausschließlich zu Informationszwecken. Die Durchführung aller Reparatur- und Wartungsarbeiten erfolgt auf eigene Gefahr und Verantwortung.
         </div>
 
@@ -102,100 +70,55 @@
 
     </div>
 
-    <script>
-        // Dark Mode Steuerung
-        const toggleBtn = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
+    <!-- LIGHTBOX OVERLAY FOR IMAGES -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
+    </div>
 
-        if (currentTheme === 'dark') {
+    <!-- STEYR RAIN CONTAINER -->
+    <div id="steyr-rain" class="steyr-rain"></div>
+
+    <!-- JAVASCRIPT FOR SEARCH, THEME & EFFECTS -->
+    <script>
+        // 1. Dark Mode Toggle
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
             toggleBtn.textContent = '☀️ Light Mode';
         }
 
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            
-            let theme = 'light';
-            if (document.body.classList.contains('dark-mode')) {
-                theme = 'dark';
-                toggleBtn.textContent = '☀️ Light Mode';
-            } else {
-                toggleBtn.textContent = '🌙 Dark Mode';
-            }
-            
+            let theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            toggleBtn.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
             localStorage.setItem('theme', theme);
         });
 
-        // Lightbox-Funktion für Bilder
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        document.querySelectorAll('.container img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.style.display = 'flex';
-            });
-        });
-
-        // Zentrale Such-Datenbank aller Seiten & Themen
-        const siteIndex = [
-            { title: "Steyr T80 - Hauptübersicht", category: "Modell", url: "t80.html", keywords: ["t80", "15 ps", "1-zylinder", "ein-zylinder"] },
-            { title: "Steyr T180 - Hauptübersicht", category: "Modell", url: "t180.html", keywords: ["t180", "30 ps", "2-zylinder", "zwei-zylinder"] },
-            { title: "Steyr T185 - Hauptübersicht", category: "Modell", url: "t185.html", keywords: ["t185", "45 ps", "3-zylinder", "drei-zylinder"] },
-            { title: "Steyr T280 - Hauptübersicht", category: "Modell", url: "t280.html", keywords: ["t280", "60 ps", "4-zylinder", "vier-zylinder"] },
-            
-            // T80 Getriebe-Anleitungen
-            { title: "T80 Getriebe - 1. Schaltturm & Schaltgabeln", category: "T80 Getriebe", url: "t80-schaltturm.html", keywords: ["schaltturm", "schaltgabel", "arretierung", "feder", "getriebe"] },
-            { title: "T80 Getriebe - 2. Lagerung & Wellendichtringe", category: "T80 Getriebe", url: "t80-lagerung.html", keywords: ["lager", "lagerung", "kugellager", "wellendichtring", "simmerring", "dichtung", "antriebswelle", "zapfwelle"] },
-            { title: "T80 Getriebe - 3. Gehäuseaufbereitung", category: "T80 Getriebe", url: "t80-gehaeuse-aufbereitung.html", keywords: ["gehäuse", "aufbereitung", "reinigung", "lackierung", "grundierung", "rissprüfung"] },
-            { title: "T80 Getriebe - 4. Kupplungsdrückmechanismus", category: "T80 Getriebe", url: "t80-kupplungsdrueckmechanismus.html", keywords: ["kupplung", "ausrücklager", "ausrückwelle", "druckmechanismus", "kupplungsspiel"] }
-        ];
-
-        function liveSearch() {
-            const query = document.getElementById('model-search').value.toLowerCase().trim();
-            const resultsContainer = document.getElementById('search-results');
-            
-            if (query.length < 2) {
-                resultsContainer.style.display = 'none';
-                resultsContainer.innerHTML = '';
-                return;
-            }
-
-            const matches = siteIndex.filter(item => {
-                const titleMatch = item.title.toLowerCase().includes(query);
-                const categoryMatch = item.category.toLowerCase().includes(query);
-                const keywordMatch = item.keywords.some(kw => kw.includes(query));
-                return titleMatch || categoryMatch || keywordMatch;
-            });
-
-            if (matches.length === 0) {
-                resultsContainer.innerHTML = `<div class="search-no-results">Keine Ergebnisse für "${query}" gefunden</div>`;
-                resultsContainer.style.display = 'block';
-                return;
-            }
-
-            let html = '';
-            matches.forEach(item => {
-                html += `
-                    <a href="${item.url}" class="search-result-item">
-                        <span class="search-result-category">${item.category}</span>
-                        <span class="search-result-title">${item.title}</span>
-                    </a>
-                `;
-            });
-
-            resultsContainer.innerHTML = html;
-            resultsContainer.style.display = 'block';
+        // 2. Lightbox Steuerung
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            lbImg.src = src;
+            lb.style.display = 'flex';
         }
 
-        // Pop-up schießen, wenn man außerhalb klickt
-        document.addEventListener('click', (e) => {
-            const container = document.querySelector('.search-container');
-            const resultsContainer = document.getElementById('search-results');
-            if (container && !container.contains(e.target) && resultsContainer) {
-                resultsContainer.style.display = 'none';
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // 3. Traktor-Regen Effekt
+        const rainContainer = document.getElementById('steyr-rain');
+        if (rainContainer) {
+            for (let i = 0; i < 15; i++) {
+                let drop = document.createElement('div');
+                drop.className = 'steyr-drop';
+                drop.innerText = '🚜';
+                drop.style.left = Math.random() * 100 + 'vw';
+                drop.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                drop.style.animationDelay = Math.random() * 5 + 's';
+                rainContainer.appendChild(drop);
             }
-        });
+        }
     </script>
 </body>
 </html>
