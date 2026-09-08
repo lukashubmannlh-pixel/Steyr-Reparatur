@@ -335,3 +335,60 @@ footer {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
+/* ==========================================
+   9. FIXES FÜR LIGHTBOX & TRAKTOR-REGEN
+   ========================================== */
+
+/* Lightbox als Overlay fixieren */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Traktor-Regen aus dem Layout-Fluss nehmen */
+.steyr-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none !important;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.steyr-drop {
+    position: absolute;
+    top: -50px;
+    font-size: 1.5rem;
+    pointer-events: none !important;
+    user-select: none;
+    animation: steyrFall linear infinite;
+}
+
+@keyframes steyrFall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}
