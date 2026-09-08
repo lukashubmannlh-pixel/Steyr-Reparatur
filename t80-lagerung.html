@@ -21,17 +21,43 @@
     <!-- Steyr Traktor-Regen Hintergrund -->
     <div class="steyr-rain"></div>
 
+    <!-- Lightbox Overlay zum Vergrößern der Bilder -->
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
+    </div>
+
     <div class="container">
         
         <header class="header-section">
             <span class="badge">Steyr T80 • Getriebe</span>
             <h1>Lagerung & Wellendichtringe</h1>
             <p class="subtitle">Dokumentation des Erneuerns der Lager und Wellendichtringe</p>
+
+            <!-- Fortschrittsbalken -->
+            <div class="progress-bar-container" title="Fortschritt dieser Reparatur: 100%">
+                <div class="progress-bar-fill" style="width: 100%;"></div>
+            </div>
         </header>
 
         <!-- Hauptbild oben -->
         <div class="hero-image-card">
             <img src="20260828_160210.jpg" alt="Getriebewelle und Lagerflansch Steyr T80">
+        </div>
+
+        <!-- Technische Daten im Überblick -->
+        <div class="specs-grid">
+            <div class="spec-card">
+                <span class="spec-label">Baugruppe</span>
+                <div class="spec-value">Getriebewelle</div>
+            </div>
+            <div class="spec-card">
+                <span class="spec-label">Teil</span>
+                <div class="spec-value">Wellendichtring</div>
+            </div>
+            <div class="spec-card">
+                <span class="spec-label">Zustand</span>
+                <div class="spec-value">Neu / Erneuert</div>
+            </div>
         </div>
 
         <div class="intro-box">
@@ -68,7 +94,7 @@
 
     </div>
 
-    <!-- Script für Dark Mode & Regen -->
+    <!-- Script für Dark Mode, Regen & Lightbox -->
     <script>
         // Dark Mode Steuerung
         const toggleBtn = document.getElementById('theme-toggle');
@@ -106,6 +132,17 @@
             drop.style.animationDelay = `${Math.random() * 5}s`;
             rainContainer.appendChild(drop);
         }
+
+        // Lightbox-Funktionalität für Bilder
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.container img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
     </script>
 </body>
 </html>
