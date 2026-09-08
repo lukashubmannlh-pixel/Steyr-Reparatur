@@ -11,6 +11,7 @@
     --card-border: #d0e2d5;
     --primary-green: #2d6a4f;
     --primary-dark: #1b4332;
+    --accent-green: #52b788;
     --hover-bg: #e2f0e6;
     --table-header-bg: #f8f9fa;
 }
@@ -25,22 +26,19 @@ body.dark-mode {
     --card-border: #3d4f43;
     --primary-green: #52b788;
     --primary-dark: #74c69d;
+    --accent-green: #40916c;
     --hover-bg: #2d3b32;
     --table-header-bg: #252525;
 }
 
 /* ==========================================
-   2. GLOBAL LAYOUT & BASE STYLES
+   2. BASE STYLES
    ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -53,30 +51,23 @@ body {
     padding: 25px 15px;
     position: relative;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-}
-
-::selection {
-    background-color: var(--primary-green);
-    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
     background-color: var(--card-bg);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    max-width: 650px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+    max-width: 680px;
     width: 100%;
-    padding: 40px 30px;
+    padding: 40px 32px;
     border: 1px solid var(--border-color);
-    z-index: 2;
     position: relative;
+    z-index: 10;
 }
 
 /* ==========================================
-   3. HEADER & HERO SECTIONS
+   3. HEADER & SECTION STYLES
    ========================================== */
 .header-section {
     text-align: center;
@@ -87,68 +78,64 @@ body {
     display: inline-block;
     background-color: var(--card-sub-bg);
     color: var(--primary-green);
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 6px 16px;
-    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 6px 18px;
+    border-radius: 50px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;
     border: 1px solid var(--card-border);
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-dark);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
     font-size: 1rem;
     color: var(--text-muted);
-}
-
-.intro-box {
-    font-size: 1rem;
-    color: var(--text-main);
-    background-color: var(--card-sub-bg);
-    border-left: 4px solid var(--primary-green);
-    padding: 15px 20px;
-    border-radius: 8px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.section-box {
-    text-align: left;
     margin-bottom: 25px;
 }
 
-.section-title {
-    font-size: 1.4rem;
-    color: var(--primary-green);
-    margin: 25px 0 15px 0;
+.intro-box {
+    background-color: var(--card-sub-bg);
     border-left: 4px solid var(--primary-green);
-    padding-left: 10px;
+    border-radius: 0 12px 12px 0;
+    padding: 18px 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 /* ==========================================
-   4. MODELL-GRID & CARDS
+   4. MODELL-GRID (INDEX.HTML)
    ========================================== */
 .model-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
 }
 
 .model-card {
     display: block;
-    padding: 16px 20px;
+    padding: 14px 18px;
     background-color: var(--card-sub-bg);
     border: 1px solid var(--card-border);
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
     color: var(--primary-dark);
     transition: all 0.2s ease-in-out;
@@ -158,7 +145,7 @@ h1 {
     background-color: var(--hover-bg);
     border-color: var(--primary-green);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .model-card h3 {
@@ -173,55 +160,42 @@ h1 {
     color: var(--text-muted);
 }
 
+/* ==========================================
+   5. SCHRITTE & BILDER
+   ========================================== */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
 .step-card {
     background-color: var(--card-sub-bg);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 18px 20px;
-    margin-bottom: 12px;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .step-card h3 {
     font-size: 1.05rem;
     color: var(--primary-dark);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
 .step-card p {
-    font-size: 0.95rem;
-    color: var(--text-main);
+    font-size: 0.9rem;
+    color: var(--text-muted);
     line-height: 1.5;
 }
 
 /* ==========================================
-   5. TECHNISCHE TABELLEN
-   ========================================== */
-.tech-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 0.92rem;
-}
-
-.tech-table th, 
-.tech-table td {
-    padding: 10px 14px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.tech-table th {
-    background-color: var(--table-header-bg);
-    color: var(--primary-dark);
-    font-weight: 700;
-}
-
-.tech-table tr:hover {
-    background-color: var(--card-sub-bg);
-}
-
-/* ==========================================
-   6. THEME TOGGLE BUTTON (OBEN LINKS)
+   6. TOGGLE BUTTON (OBEN LINKS)
    ========================================== */
 .theme-toggle-btn {
     position: fixed;
@@ -235,7 +209,7 @@ h1 {
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -245,14 +219,14 @@ h1 {
 }
 
 /* ==========================================
-   7. ANIMATIONEN & STEYR-REGEN
+   7. STEYR-REGEN HINTERGRUND
    ========================================== */
 .steyr-rain {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     z-index: 1;
     overflow: hidden;
@@ -260,83 +234,32 @@ h1 {
 
 .steyr-drop {
     position: absolute;
-    top: -50px;
-    font-size: 24px;
-    opacity: 0.25;
-    animation: rainFall linear infinite;
+    top: -60px;
+    font-size: 28px;
+    opacity: 0.35;
+    animation: fall linear infinite;
 }
 
-@keyframes rainFall {
+@keyframes fall {
     0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.25;
-    }
-    90% {
-        opacity: 0.25;
+        transform: translateY(-10vh) rotate(0deg);
     }
     100% {
-        transform: translateY(105vh) rotate(360deg);
-        opacity: 0;
+        transform: translateY(115vh) rotate(360deg);
     }
 }
 
 /* ==========================================
-   8. FOOTER & NAVIGATION
+   8. FOOTER
    ========================================== */
 .footer-section {
     text-align: center;
     margin-top: 35px;
     border-top: 1px solid var(--border-color);
-    padding-top: 20px;
-}
-
-.back-link {
-    display: inline-block;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.back-link:hover {
-    color: var(--primary-green);
+    padding-top: 25px;
 }
 
 footer {
     font-size: 0.85rem;
     color: var(--text-muted);
-}
-
-/* ==========================================
-   9. DRUCKANSICHT (WERKSTATT-PRINT)
-   ========================================== */
-@media print {
-    body {
-        background: none !important;
-        color: #000 !important;
-        padding: 0;
-    }
-
-    .steyr-rain, 
-    .theme-toggle-btn, 
-    .back-link, 
-    footer {
-        display: none !important;
-    }
-
-    .container {
-        box-shadow: none !important;
-        border: none !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-    }
-
-    .step-card {
-        page-break-inside: avoid;
-        border: 1px solid #ccc !important;
-    }
 }
