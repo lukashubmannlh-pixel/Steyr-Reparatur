@@ -8,6 +8,10 @@
 </head>
 <body>
 
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
+</div>
+
     <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
     
    <!-- Steyr Traktor-Regen (20 Traktoren) -->
@@ -139,6 +143,15 @@
         document.body.classList.add('dark-mode');
         toggleBtn.textContent = '☀️ Light Mode';
     }
+    
+    document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+    });
+});
 
     // Klick-Event zum Umschalten
     toggleBtn.addEventListener('click', () => {
