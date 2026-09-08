@@ -53,7 +53,30 @@
             <h1>Steyr Traktor Reparaturen</h1>
             <p class="subtitle">Wähle dein Traktormodell aus, um Anleitungen und Dokumente zu sehen:</p>
         </div>
+<!-- In der header-section unter <p class="subtitle"> einfügen: -->
+<div class="search-container">
+    <input type="text" id="model-search" placeholder="🔍 Modell oder Zylinder suchen..." onkeyup="filterModels()">
+</div>
 
+<!-- Modell-Grid mit Such-Attributen (data-search): -->
+<div class="model-grid" id="model-grid">
+    <a href="t80.html" class="model-card" data-search="steyr t80 15 ps 1 zylinder 15ps 1zylinder15ps 1-zylinder">
+        <h3>Steyr T80</h3>
+        <span>15 PS / 1-Zylinder</span>
+    </a>
+    <a href="t180.html" class="model-card" data-search="steyr t180 30 ps 2 zylinder 30ps 2zylinder 2-zylinder">
+        <h3>Steyr T180</h3>
+        <span>30 PS / 2-Zylinder</span>
+    </a>
+    <a href="t185.html" class="model-card" data-search="steyr t185 45 ps 3 zylinder 45ps 3zylinder 3-zylinder">
+        <h3>Steyr T185</h3>
+        <span>45 PS / 3-Zylinder</span>
+    </a>
+    <a href="t280.html" class="model-card" data-search="steyr t280 60 ps 4 zylinder 60ps 4zylinder 4-zylinder">
+        <h3>Steyr T280</h3>
+        <span>60 PS / 4-Zylinder</span>
+    </a>
+</div>
         <div class="model-grid">
             <a href="t80.html" class="model-card">
                 <h3>Steyr T80</h3>
@@ -99,6 +122,22 @@
             document.body.classList.add('dark-mode');
             toggleBtn.textContent = '☀️ Light Mode';
         }
+
+        function filterModels() {
+    const query = document.getElementById('model-search').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.model-card');
+
+    cards.forEach(card => {
+        const searchText = card.getAttribute('data-search') || '';
+        const cardContent = card.innerText.toLowerCase();
+
+        if (searchText.includes(query) || cardContent.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
 
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
