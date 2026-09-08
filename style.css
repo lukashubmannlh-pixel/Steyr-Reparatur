@@ -494,3 +494,79 @@ a, button, input, img, .model-card, .search-result-item {
 input[type="text"] {
     cursor: text !important;
 }
+/* ==========================================
+   TROUBLESHOOTING GUIDE STYLES
+   ========================================== */
+
+/* Button oben rechts nebeneinander anordnen */
+.trouble-btn {
+    position: fixed;
+    top: 20px;
+    left: 160px; /* Platziert den Button direkt neben dem Theme-Toggle */
+    background-color: var(--primary-green);
+    color: #ffffff !important;
+    border: 1px solid var(--primary-dark);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.trouble-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.trouble-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trouble-card {
+    background-color: var(--card-sub-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-green);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.trouble-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.trouble-header h3 {
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+.time-tag {
+    font-size: 0.78rem;
+    background-color: var(--hover-bg);
+    color: var(--primary-green);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.trouble-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.trouble-card p:last-child {
+    margin-bottom: 0;
+}
