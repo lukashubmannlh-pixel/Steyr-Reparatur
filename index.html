@@ -52,38 +52,34 @@
             <span class="badge">Steyr Traktor Archiv</span>
             <h1>Steyr Traktor Reparaturen</h1>
             <p class="subtitle">Wähle dein Traktormodell aus, um Anleitungen und Dokumente zu sehen:</p>
+            
+            <!-- Live-Suchleiste mit Pop-up -->
+            <div class="search-container">
+                <input type="text" id="model-search" placeholder="🔍 Modell, Bauteil oder Thema suchen (z. B. Lager, Getriebe)..." autocomplete="off" oninput="liveSearch()">
+                <div id="search-results" class="search-results-popup"></div>
+            </div>
         </div>
-<!-- In der header-section unter <p class="subtitle"> einfügen: -->
-<div class="search-container">
-    <input type="text" id="model-search" placeholder="🔍 Modell oder Zylinder suchen..." onkeyup="filterModels()">
-</div>
 
-<!-- Modell-Grid mit Such-Attributen (data-search): -->
-<div class="model-grid" id="model-grid">
-    <a href="t80.html" class="model-card" data-search="steyr t80 15 ps 1 zylinder 15ps 1zylinder15ps 1-zylinder">
-        <h3>Steyr T80</h3>
-        <span>15 PS / 1-Zylinder</span>
-    </a>
-    <a href="t180.html" class="model-card" data-search="steyr t180 30 ps 2 zylinder 30ps 2zylinder 2-zylinder">
-        <h3>Steyr T180</h3>
-        <span>30 PS / 2-Zylinder</span>
-    </a>
-    <a href="t185.html" class="model-card" data-search="steyr t185 45 ps 3 zylinder 45ps 3zylinder 3-zylinder">
-        <h3>Steyr T185</h3>
-        <span>45 PS / 3-Zylinder</span>
-    </a>
-    <a href="t280.html" class="model-card" data-search="steyr t280 60 ps 4 zylinder 60ps 4zylinder 4-zylinder">
-        <h3>Steyr T280</h3>
-        <span>60 PS / 4-Zylinder</span>
-    </a>
-</div>
-      
-        <!-- Hinweis für Bildanzeige -->
+        <div class="model-grid" id="model-grid">
+            <a href="t80.html" class="model-card">
+                <h3>Steyr T80</h3>
+                <span>15 PS / 1-Zylinder</span>
+            </a>
+            <a href="t180.html" class="model-card">
+                <h3>Steyr T180</h3>
+                <span>30 PS / 2-Zylinder</span>
+            </a>
+            <a href="t185.html" class="model-card">
+                <h3>Steyr T185</h3>
+                <span>45 PS / 3-Zylinder</span>
+            </a>
+            <a href="t280.html" class="model-card">
+                <h3>Steyr T280</h3>
+                <span>60 PS / 4-Zylinder</span>
+            </a>
+        </div>
+        
         <div class="intro-box" style="margin-top: 25px;">
-            <strong>💡 Foto-Tipp:</strong> Alle Bilder in den Anleitungen lassen sich durch ein kurzes Anklicken vergrößern und mit einem zweiten Klick wieder schließen.
-        </div>
-
-        <div class="intro-box" style="margin-top: 15px;">
             <strong>Haftungsausschluss (Disclaimer):</strong> Alle auf dieser Website bereitgestellten Anleitungen, Daten und Berichte dienen ausschließlich zu Informationszwecken. Die Durchführung aller Reparatur- und Wartungsarbeiten erfolgt auf eigene Gefahr und Verantwortung.
         </div>
 
@@ -104,22 +100,6 @@
             document.body.classList.add('dark-mode');
             toggleBtn.textContent = '☀️ Light Mode';
         }
-
-        function filterModels() {
-    const query = document.getElementById('model-search').value.toLowerCase().trim();
-    const cards = document.querySelectorAll('.model-card');
-
-    cards.forEach(card => {
-        const searchText = card.getAttribute('data-search') || '';
-        const cardContent = card.innerText.toLowerCase();
-
-        if (searchText.includes(query) || cardContent.includes(query)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
 
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
@@ -144,6 +124,66 @@
                 lightboxImg.src = img.src;
                 lightbox.style.display = 'flex';
             });
+        });
+
+        // Zentrale Such-Datenbank aller Seiten & Themen
+        const siteIndex = [
+            { title: "Steyr T80 - Hauptübersicht", category: "Modell", url: "t80.html", keywords: ["t80", "15 ps", "1-zylinder", "ein-zylinder"] },
+            { title: "Steyr T180 - Hauptübersicht", category: "Modell", url: "t180.html", keywords: ["t180", "30 ps", "2-zylinder", "zwei-zylinder"] },
+            { title: "Steyr T185 - Hauptübersicht", category: "Modell", url: "t185.html", keywords: ["t185", "45 ps", "3-zylinder", "drei-zylinder"] },
+            { title: "Steyr T280 - Hauptübersicht", category: "Modell", url: "t280.html", keywords: ["t280", "60 ps", "4-zylinder", "vier-zylinder"] },
+            
+            // T80 Getriebe-Anleitungen
+            { title: "T80 Getriebe - 1. Schaltturm & Schaltgabeln", category: "T80 Getriebe", url: "t80-schaltturm.html", keywords: ["schaltturm", "schaltgabel", "arretierung", "feder", "getriebe"] },
+            { title: "T80 Getriebe - 2. Lagerung & Wellendichtringe", category: "T80 Getriebe", url: "t80-lagerung.html", keywords: ["lager", "lagerung", "kugellager", "wellendichtring", "simmerring", "dichtung", "antriebswelle", "zapfwelle"] },
+            { title: "T80 Getriebe - 3. Gehäuseaufbereitung", category: "T80 Getriebe", url: "t80-gehaeuse-aufbereitung.html", keywords: ["gehäuse", "aufbereitung", "reinigung", "lackierung", "grundierung", "rissprüfung"] },
+            { title: "T80 Getriebe - 4. Kupplungsdrückmechanismus", category: "T80 Getriebe", url: "t80-kupplungsdrueckmechanismus.html", keywords: ["kupplung", "ausrücklager", "ausrückwelle", "druckmechanismus", "kupplungsspiel"] }
+        ];
+
+        function liveSearch() {
+            const query = document.getElementById('model-search').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('search-results');
+            
+            if (query.length < 2) {
+                resultsContainer.style.display = 'none';
+                resultsContainer.innerHTML = '';
+                return;
+            }
+
+            const matches = siteIndex.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(query);
+                const categoryMatch = item.category.toLowerCase().includes(query);
+                const keywordMatch = item.keywords.some(kw => kw.includes(query));
+                return titleMatch || categoryMatch || keywordMatch;
+            });
+
+            if (matches.length === 0) {
+                resultsContainer.innerHTML = `<div class="search-no-results">Keine Ergebnisse für "${query}" gefunden</div>`;
+                resultsContainer.style.display = 'block';
+                return;
+            }
+
+            let html = '';
+            matches.forEach(item => {
+                html += `
+                    <a href="${item.url}" class="search-result-item">
+                        <span class="search-result-category">${item.category}</span>
+                        <span class="search-result-title">${item.title}</span>
+                    </a>
+                `;
+            });
+
+            resultsContainer.innerHTML = html;
+            resultsContainer.style.display = 'block';
+        }
+
+        // Pop-up schießen, wenn man außerhalb klickt
+        document.addEventListener('click', (e) => {
+            const container = document.querySelector('.search-container');
+            const resultsContainer = document.getElementById('search-results');
+            if (container && !container.contains(e.target) && resultsContainer) {
+                resultsContainer.style.display = 'none';
+            }
         });
     </script>
 </body>
