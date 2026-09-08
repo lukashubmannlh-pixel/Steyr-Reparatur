@@ -78,6 +78,7 @@ input[type="text"] {
     cursor: text !important;
 }
 
+/* Globaler Schutz & Klick-Styling für Bilder */
 img {
     max-width: 100%;
     height: auto;
@@ -91,36 +92,8 @@ img:hover {
 }
 
 /* ==========================================
-   3. HEADER, BREADCRUMB & SPECS
+   3. HEADER, PROGRESS & SPECS STYLES
    ========================================== */
-.breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    margin-bottom: 20px;
-    padding: 8px 14px;
-    background-color: var(--card-sub-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-}
-
-.breadcrumb a {
-    color: var(--primary-green);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.breadcrumb .separator {
-    color: var(--text-muted);
-}
-
-.breadcrumb .current {
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
 .header-section {
     text-align: center;
     margin-bottom: 20px;
@@ -154,6 +127,52 @@ h1 {
     margin-bottom: 15px;
 }
 
+.progress-bar-container {
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin: 15px 0 25px 0;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--primary-green);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.spec-card {
+    background-color: var(--card-sub-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.spec-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.spec-value {
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
 .intro-box {
     background-color: var(--card-sub-bg);
     border-left: 4px solid var(--primary-green);
@@ -173,7 +192,7 @@ h1 {
 }
 
 /* ==========================================
-   4. MODELL-GRID & SCHRITTE
+   4. MODELL-GRID (INDEX.HTML)
    ========================================== */
 .model-grid {
     display: flex;
@@ -200,6 +219,21 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.model-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.model-card span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   5. SCHRITTE & BILD-FORMATIERUNGEN (ORIGINALVERVERSION)
+   ========================================== */
 .steps-list {
     display: flex;
     flex-direction: column;
@@ -232,34 +266,57 @@ h1 {
     margin-bottom: 12px;
 }
 
-/* ==========================================
-   5. SEARCH & POPUP STYLES
-   ========================================== */
-.search-container {
-    position: relative;
+.step-card img {
     width: 100%;
-    margin: 15px 0 25px 0;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-.search-container input {
+.hero-image-card {
     width: 100%;
-    padding: 12px 18px;
-    font-size: 0.95rem;
-    border-radius: 10px;
+    max-height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0;
     border: 1px solid var(--border-color);
     background-color: var(--card-sub-bg);
-    color: var(--text-main);
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.search-container input:focus {
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+.hero-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ==========================================
-   6. TOP NAV BUTTONS & THEME TOGGLE
+   6. LIGHTBOX OVERLAY (ORIGINALVERVERSION)
+   ========================================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 92vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+/* ==========================================
+   7. TOP NAVIGATION & THEME TOGGLE
    ========================================== */
 .top-nav-buttons {
     position: fixed;
@@ -311,18 +368,179 @@ h1 {
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--primary-green);
 }
 
 /* ==========================================
-   7. STEYR REGEN OVERLAY FIX
+   8. STEYR REGEN OVERLAY
    ========================================== */
-.steyr-rain,
-.steyr-drop {
+.steyr-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none !important;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.steyr-drop {
+    position: absolute;
+    top: -60px;
+    font-size: 28px;
+    opacity: 0.35;
+    pointer-events: none !important;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(115vh) rotate(360deg);
+    }
 }
 
 /* ==========================================
-   8. FOOTER
+   9. SEARCH & POPUP STYLES
+   ========================================== */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin: 15px 0 25px 0;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-sub-bg);
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-container input:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.search-results-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 6px;
+    background-color: var(--card-bg, #1e1e1e);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 1000;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-main, #fff);
+    border-bottom: 1px solid var(--border-color, #333);
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: rgba(45, 106, 79, 0.2);
+}
+
+.search-result-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #2d6a4f;
+    font-weight: bold;
+}
+
+.search-result-title {
+    font-size: 0.95rem;
+    margin-top: 2px;
+}
+
+.search-no-results {
+    padding: 15px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-align: center;
+}
+
+/* ==========================================
+   10. TROUBLESHOOTING CARDS
+   ========================================== */
+.trouble-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trouble-card {
+    background-color: var(--card-sub-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-green);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.trouble-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.trouble-header h3 {
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+.time-tag {
+    font-size: 0.78rem;
+    background-color: var(--hover-bg);
+    color: var(--primary-green);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.trouble-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.trouble-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   11. FOOTER
    ========================================== */
 .footer-section {
     text-align: center;
@@ -334,61 +552,4 @@ h1 {
 footer {
     font-size: 0.85rem;
     color: var(--text-muted);
-}
-/* ==========================================
-   9. FIXES FÜR LIGHTBOX & TRAKTOR-REGEN
-   ========================================== */
-
-/* Lightbox als Overlay fixieren */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* Traktor-Regen aus dem Layout-Fluss nehmen */
-.steyr-rain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none !important;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.steyr-drop {
-    position: absolute;
-    top: -50px;
-    font-size: 1.5rem;
-    pointer-events: none !important;
-    user-select: none;
-    animation: steyrFall linear infinite;
-}
-
-@keyframes steyrFall {
-    0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(105vh) rotate(360deg);
-        opacity: 0.2;
-    }
 }
