@@ -396,3 +396,65 @@ footer {
     border-color: var(--primary-green);
     box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
 }
+/* ==========================================
+   SUCH-POPUP STYLES
+   ========================================== */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin: 15px 0 25px 0;
+}
+
+.search-results-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 6px;
+    background-color: var(--card-bg, #1e1e1e);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 1000;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-main, #fff);
+    border-bottom: 1px solid var(--border-color, #333);
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: rgba(45, 106, 79, 0.2);
+}
+
+.search-result-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #2d6a4f;
+    font-weight: bold;
+}
+
+.search-result-title {
+    font-size: 0.95rem;
+    margin-top: 2px;
+}
+
+.search-no-results {
+    padding: 15px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-align: center;
+}
