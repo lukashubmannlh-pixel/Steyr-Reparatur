@@ -65,7 +65,8 @@ body {
     position: relative;
     z-index: 10;
 }
-/* Globale Bildbegrenzung gegen Sprengen des Layouts */
+
+/* Globaler Basis-Schutz für alle Bilder */
 img {
     max-width: 100%;
     height: auto;
@@ -168,7 +169,7 @@ h1 {
 }
 
 /* ==========================================
-   5. SCHRITTE & BILDER
+   5. SCHRITTE & BILD-FORMATIERUNGEN
    ========================================== */
 .steps-list {
     display: flex;
@@ -199,6 +200,34 @@ h1 {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Bilder innerhalb von Schritten/Anleitungen */
+.step-card img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-top: 8px;
+}
+
+/* Große Header-Bilder oben auf Dokus/Seiten */
+.hero-image-card {
+    width: 100%;
+    max-height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-sub-bg);
+}
+
+.hero-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ==========================================
