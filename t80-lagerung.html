@@ -3,149 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steyr T80 - Getriebe Lagerung & Wellendichtringe</title>
+    <title>Steyr T80 - Getriebelagerung & Dichtung</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Blitz-Schutz gegen Flimmern beim Seitenwechsel -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
 </head>
 <body>
 
-    <!-- Steyr-Regen Hintergrund -->
-    <div class="steyr-rain">
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-        <div class="steyr-drop">🚜</div>
-    </div>
+    <!-- Dark Mode Schalter -->
+    <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+
+    <!-- Steyr Traktor-Regen Hintergrund -->
+    <div class="steyr-rain"></div>
 
     <div class="container">
-        <div class="header-section">
-            <span class="badge">Steyr T80 &bull; Getriebe</span>
+        
+        <header class="header-section">
+            <span class="badge">Steyr T80 • Getriebe</span>
             <h1>Lagerung & Wellendichtringe</h1>
-            <p class="subtitle">Übersicht der Kugellager, Simmerringe und deren Austausch</p>
+            <p class="subtitle">Dokumentation des Erneuerns der Lager und Wellendichtringe</p>
+        </header>
+
+        <!-- Hauptbild oben -->
+        <div class="hero-image-card">
+            <img src="20260828_160210.jpg" alt="Getriebewelle und Lagerflansch Steyr T80">
         </div>
 
         <div class="intro-box">
-            Beim Überholen des Steyr T80 Getriebes sollten alle Wälzlager und Wellendichtringe (Simmerringe) erneuert werden, um Ölleckagen zu stoppen und Getriebeschäden vorzubeugen.
+            Bei der Überholung des T80 Getriebes werden die alten Wellendichtringe (Simmerringe) und Lager überprüft und getauscht, um Ölleckagen an den Wellenaustritten zu verhindern.
         </div>
 
-        <!-- Abschnitt Wellendichtringe -->
-        <div class="section-box">
-            <h2 class="section-title">Benötigte Wellendichtringe (Simmerringe)</h2>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
-                Empfehlung: Dichtringe mit NBR-Werkstoff und Staublippe (BASL / CC) verwenden.
-            </p>
+        <h2 class="section-title">Reparatur- & Montageschritte</h2>
 
-            <table class="tech-table">
-                <thead>
-                    <tr>
-                        <th>Einbauort</th>
-                        <th>Abmessung (mm)</th>
-                        <th>Anzahl</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Getriebeeingangswelle (Kupplung)</td>
-                        <td>35 x 52 x 10</td>
-                        <td>1 Stk.</td>
-                    </tr>
-                    <tr>
-                        <td>Zapfwelle (Zapfwellenausgang)</td>
-                        <td>35 x 56 x 10</td>
-                        <td>1 Stk.</td>
-                    </tr>
-                    <tr>
-                        <td>Steckachse / Hinterachswelle</td>
-                        <td>62 x 85 x 10</td>
-                        <td>2 Stk.</td>
-                    </tr>
-                    <tr>
-                        <td>Riemenscheibenantrieb (optional)</td>
-                        <td>40 x 62 x 10</td>
-                        <td>1 Stk.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Abschnitt Lagerung -->
-        <div class="section-box">
-            <h2 class="section-title">Benötigte Kugellager / Wälzlager</h2>
+        <div class="steps-list">
             
-            <table class="tech-table">
-                <thead>
-                    <tr>
-                        <th>Einbauort</th>
-                        <th>DIN-Bezeichnung</th>
-                        <th>Typ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Antriebswelle / Vorgelegewelle</td>
-                        <td>6307</td>
-                        <td>Rillenkugellager</td>
-                    </tr>
-                    <tr>
-                        <td>Differentiallagerung</td>
-                        <td>6211</td>
-                        <td>Rillenkugellager</td>
-                    </tr>
-                    <tr>
-                        <td>Zapfwelle vorne / hinten</td>
-                        <td>6207</td>
-                        <td>Rillenkugellager</td>
-                    </tr>
-                    <tr>
-                        <td>Hinterachse / Steckachse</td>
-                        <td>6309</td>
-                        <td>Rillenkugellager</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Schritt für Schritt Austausch -->
-        <div class="section-box">
-            <h2 class="section-title">Anleitung zum Austausch</h2>
-
-            <div class="steps-list">
-                <div class="step-card">
-                    <h3>1. Getriebeöl ablassen & Demontage</h3>
-                    <p>Getriebeöl vollständig ablassen. Je nach Welle die entsprechenden Gehäusedeckel, Achstrichter oder die Zapfwelle demontieren.</p>
-                </div>
-
-                <div class="step-card">
-                    <h3>2. Alte Dichtringe & Lager entfernen</h3>
-                    <p>Alte Simmerringe vorsichtig heraushebeln. Wälzlager mit einem geeigneten Abzieher druckfrei von den Wellen abziehen.</p>
-                </div>
-
-                <div class="step-card">
-                    <h3>3. Sitz reinigen & kontrollieren</h3>
-                    <p>Lagersitze und Wellenlaufflächen gründlich mit Bremsenreiniger säubern. Laufflächen der Wellen auf Einlaufspuren prüfen.</p>
-                </div>
-
-                <div class="step-card">
-                    <h3>4. Neue Lager & Simmerringe einpressen</h3>
-                    <p>Neue Lager gleichmäßig aufschrumpfen oder mit passendem Rohrstück einpressen. Wellendichtringe an den Dichtlippen leicht einfetten und plan einschlagen.</p>
-                </div>
+            <div class="step-card">
+                <h3>1. Demontage & Zustandskontrolle des Flansches</h3>
+                <p>Abziehen des Lagerflansches von der Getriebewelle. Die Dichtflächen und Lagersitze werden gründlich gereinigt und auf Einlaufspuren kontrolliert.</p>
+                <img src="20260828_160210.jpg" alt="Getriebewelle mit montiertem Flansch">
             </div>
+
+            <div class="step-card">
+                <h3>2. Kontrolle der neuen Wellendichtringe (Vorderseite)</h3>
+                <p>Einsetzen bzw. Überprüfen des passenden Wellendichtrings. Die Dichtlippe muss unverletzt sein und gleichmäßig an der Welle anliegen.</p>
+                <img src="20260901_121142.jpg" alt="Wellendichtring Vorderseite">
+            </div>
+
+            <div class="step-card">
+                <h3>3. Wurmfeder & Innenseite prüfen</h3>
+                <p>Vor dem Einbau wird die Wurmfeder im Inneren des Simmerrings kontrolliert, um ausreichend Anpressdruck der Dichtlippe zu gewährleisten.</p>
+                <img src="20260901_121137.jpg" alt="Wellendichtring Rückseite mit Wurmfeder">
+            </div>
+
         </div>
 
-        <!-- Fußzeile -->
-        <div class="footer-section">
-            <a href="t80-getriebe.html" class="back-link">&larr; Zurück zur Getriebeübersicht</a>
-            <footer>
-                <a href="index.html" style="color: inherit; text-decoration: none; margin-right: 10px;" title="Zur Hauptseite">🏠</a>
-                &copy; Steyr Traktor Reparaturprojekt &bull; <a href="impressum.html" style="color: inherit;">Impressum</a>
-            </footer>
-        </div>
+        <footer class="footer-section">
+            <footer>© Steyr T80 Dokumentation • Alle Rechte vorbehalten</footer>
+        </footer>
+
     </div>
 
+    <!-- Script für Dark Mode & Regen -->
+    <script>
+        // Dark Mode Steuerung
+        const toggleBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Light Mode';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            let theme = 'light';
+            if (document.body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                toggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                toggleBtn.textContent = '🌙 Dark Mode';
+            }
+            
+            localStorage.setItem('theme', theme);
+        });
+
+        // Traktor-Regen Generator
+        const rainContainer = document.querySelector('.steyr-rain');
+        const dropCount = 18;
+
+        for (let i = 0; i < dropCount; i++) {
+            const drop = document.createElement('div');
+            drop.classList.add('steyr-drop');
+            drop.textContent = '🚜';
+            drop.style.left = `${Math.random() * 100}vw`;
+            drop.style.animationDuration = `${Math.random() * 3 + 4}s`;
+            drop.style.animationDelay = `${Math.random() * 5}s`;
+            rainContainer.appendChild(drop);
+        }
+    </script>
 </body>
 </html>
