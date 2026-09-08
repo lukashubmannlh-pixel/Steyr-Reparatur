@@ -13,16 +13,16 @@
 </head>
 <body>
 
-    <!-- OBENE BUTTON-LEISTE (Fest positioniert) -->
+    <!-- OBENE BUTTON-LEISTE -->
     <div class="top-nav-buttons">
         <a href="typenunterschiede.html" class="top-btn spec-btn">🚜 Typenunterschiede</a>
         <a href="troubleshooting.html" class="top-btn trouble-btn">🔧 Finde den Fehler</a>
     </div>
 
-    <!-- DARK MODE BUTTON (Oben rechts) -->
+    <!-- DARK MODE BUTTON -->
     <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
 
-    <!-- ZENTRALER HAUPT-CONTAINER -->
+    <!-- HAUPT-CONTAINER -->
     <div class="container">
 
         <div class="header-section">
@@ -57,7 +57,12 @@
             </a>
         </div>
 
-        <!-- INTRO / DISCLAIMER -->
+        <!-- HINWEIS ZUR BILDVERGRÖSSERUNG -->
+        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 25px;">
+            💡 Tipp: Klicke auf ein Bild in den Anleitungen, um es zu vergrößern.
+        </p>
+
+        <!-- DISCLAIMER / INTRO -->
         <div class="intro-box">
             <strong>Haftungsausschluss (Disclaimer):</strong> Alle auf dieser Website bereitgestellten Anleitungen, Daten und Berichte dienen ausschließlich zu Informationszwecken. Die Durchführung aller Reparatur- und Wartungsarbeiten erfolgt auf eigene Gefahr und Verantwortung.
         </div>
@@ -70,17 +75,17 @@
 
     </div>
 
-    <!-- LIGHTBOX OVERLAY FOR IMAGES -->
+    <!-- LIGHTBOX OVERLAY -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
+        <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vergrößerte Ansicht">
     </div>
 
-    <!-- STEYR RAIN CONTAINER -->
+    <!-- STEYR REGEN -->
     <div id="steyr-rain" class="steyr-rain"></div>
 
-    <!-- JAVASCRIPT FOR SEARCH, THEME & EFFECTS -->
+    <!-- JAVASCRIPT -->
     <script>
-        // 1. Dark Mode Toggle
+        // Dark Mode Toggle
         const toggleBtn = document.getElementById('theme-toggle');
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
@@ -94,7 +99,7 @@
             localStorage.setItem('theme', theme);
         });
 
-        // 2. Lightbox Steuerung
+        // Lightbox Steuerung
         function openLightbox(src) {
             const lb = document.getElementById('lightbox');
             const lbImg = document.getElementById('lightbox-img');
@@ -106,7 +111,7 @@
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        // 3. Traktor-Regen Effekt
+        // Traktor-Regen Effekt
         const rainContainer = document.getElementById('steyr-rain');
         if (rainContainer) {
             for (let i = 0; i < 15; i++) {
