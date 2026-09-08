@@ -66,20 +66,26 @@ body {
     z-index: 10;
 }
 
-/* Globaler Basis-Schutz für alle Bilder */
+/* Globaler Schutz & Klick-Styling für Bilder */
 img {
     max-width: 100%;
     height: auto;
     display: block;
     border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+img:hover {
+    filter: brightness(0.95);
 }
 
 /* ==========================================
-   3. HEADER & SECTION STYLES
+   3. HEADER, PROGRESS & SPECS STYLES
    ========================================== */
 .header-section {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .badge {
@@ -107,7 +113,55 @@ h1 {
 .subtitle {
     font-size: 1rem;
     color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* Fortschrittsbalken */
+.progress-bar-container {
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin: 15px 0 25px 0;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--primary-green);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* Technische Daten-Kacheln */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
     margin-bottom: 25px;
+}
+
+.spec-card {
+    background-color: var(--card-sub-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.spec-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.spec-value {
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    margin-top: 2px;
 }
 
 .intro-box {
@@ -203,17 +257,14 @@ h1 {
     margin-bottom: 12px;
 }
 
-/* Bilder innerhalb von Schritten/Anleitungen */
 .step-card img {
     width: 100%;
     max-height: 320px;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    margin-top: 8px;
 }
 
-/* Große Header-Bilder oben auf Dokus/Seiten */
 .hero-image-card {
     width: 100%;
     max-height: 350px;
@@ -231,7 +282,32 @@ h1 {
 }
 
 /* ==========================================
-   6. TOGGLE BUTTON (OBEN LINKS)
+   6. LIGHTBOX OVERLAY
+   ========================================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 92vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+/* ==========================================
+   7. TOGGLE BUTTON & STEYR-REGEN
    ========================================== */
 .theme-toggle-btn {
     position: fixed;
@@ -254,9 +330,6 @@ h1 {
     border-color: var(--primary-green);
 }
 
-/* ==========================================
-   7. STEYR-REGEN HINTERGRUND
-   ========================================== */
 .steyr-rain {
     position: fixed;
     top: 0;
