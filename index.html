@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steyr Traktor Archiv</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Blitz-Schutz gegen Flimmern beim Seitenwechsel -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
 </head>
 <body>
 
@@ -34,6 +41,11 @@
         <span class="steyr-drop" style="left: 97%; animation-duration: 10s; animation-delay: 3s;">🚜</span>
     </div>
 
+    <!-- Lightbox Overlay zum Vergrößern/Verkleinern -->
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Vergrößerte Ansicht">
+    </div>
+
     <div class="container">
 
         <div class="header-section">
@@ -61,7 +73,12 @@
             </a>
         </div>
 
+        <!-- Hinweis für Bildanzeige -->
         <div class="intro-box" style="margin-top: 25px;">
+            <strong>💡 Foto-Tipp:</strong> Alle Bilder in den Anleitungen lassen sich durch ein kurzes Anklicken vergrößern und mit einem zweiten Klick wieder schließen.
+        </div>
+
+        <div class="intro-box" style="margin-top: 15px;">
             <strong>Haftungsausschluss (Disclaimer):</strong> Alle auf dieser Website bereitgestellten Anleitungen, Daten und Berichte dienen ausschließlich zu Informationszwecken. Die Durchführung aller Reparatur- und Wartungsarbeiten erfolgt auf eigene Gefahr und Verantwortung.
         </div>
 
@@ -74,6 +91,7 @@
     </div>
 
     <script>
+        // Dark Mode Steuerung
         const toggleBtn = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme');
 
@@ -94,6 +112,17 @@
             }
             
             localStorage.setItem('theme', theme);
+        });
+
+        // Lightbox-Funktion für Bilder
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.container img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
         });
     </script>
 </body>
