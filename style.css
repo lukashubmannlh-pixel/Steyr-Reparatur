@@ -458,3 +458,21 @@ footer {
     opacity: 0.7;
     text-align: center;
 }
+/* ==========================================
+   FIX FOR MAUSZEIGER & REGEN-OVERLAY
+   ========================================== */
+
+/* Verhindert, dass fallende Traktoren den Mauszeiger verdecken/blockieren */
+.steyr-rain,
+.steyr-drop {
+    pointer-events: none !important;
+}
+
+/* Garantiert sichtbaren Mauszeiger im Suchfeld */
+.search-container input {
+    cursor: text !important;
+}
+
+.search-container input:hover {
+    cursor: pointer !important;
+}
