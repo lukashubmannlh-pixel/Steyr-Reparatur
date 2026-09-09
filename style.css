@@ -553,3 +553,49 @@ footer {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
+/* ==========================================
+   12. TABELLEN-STYLES (TYPENUNTERSCHIEDE)
+   ========================================== */
+.compare-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-sub-bg);
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.compare-table th, 
+.compare-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.compare-table th {
+    background-color: var(--table-header-bg);
+    color: var(--primary-dark);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.compare-table tr:last-child td {
+    border-bottom: none;
+}
+
+.compare-table tr:hover {
+    background-color: var(--hover-bg);
+}
+
+.model-highlight {
+    font-weight: 700;
+    color: var(--primary-green);
+}
