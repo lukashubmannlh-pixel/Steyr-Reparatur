@@ -13,7 +13,7 @@
     --primary-dark: #1b4332;
     --accent-green: #52b788;
     --hover-bg: #e2f0e6;
-    --table-header-bg: #f8f9fa;
+    --table-header-bg: #e8f3ec;
 }
 
 body.dark-mode {
@@ -78,7 +78,6 @@ input[type="text"] {
     cursor: text !important;
 }
 
-/* Globaler Schutz & Klick-Styling für Bilder */
 img {
     max-width: 100%;
     height: auto;
@@ -232,7 +231,7 @@ h1 {
 }
 
 /* ==========================================
-   5. SCHRITTE & BILD-FORMATIERUNGEN (ORIGINALVERVERSION)
+   5. SCHRITTE & BILD-FORMATIERUNGEN
    ========================================== */
 .steps-list {
     display: flex;
@@ -291,7 +290,7 @@ h1 {
 }
 
 /* ==========================================
-   6. LIGHTBOX OVERLAY (ORIGINALVERVERSION)
+   6. LIGHTBOX OVERLAY
    ========================================== */
 .lightbox {
     display: none;
@@ -540,29 +539,16 @@ h1 {
 }
 
 /* ==========================================
-   11. FOOTER
-   ========================================== */
-.footer-section {
-    text-align: center;
-    margin-top: 35px;
-    border-top: 1px solid var(--border-color);
-    padding-top: 25px;
-}
-
-footer {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-/* ==========================================
-   12. TABELLEN-STYLES (TYPENUNTERSCHIEDE)
+   11. TABELLEN-STYLES (TYPENUNTERSCHIEDE)
    ========================================== */
 .compare-table-wrapper {
     width: 100%;
     overflow-x: auto;
-    margin: 20px 0;
+    margin: 20px 0 30px 0;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--card-border);
     background-color: var(--card-sub-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .compare-table {
@@ -578,6 +564,7 @@ footer {
     border-bottom: 1px solid var(--border-color);
     color: var(--text-main);
     line-height: 1.5;
+    vertical-align: top;
 }
 
 .compare-table th {
@@ -585,17 +572,33 @@ footer {
     color: var(--primary-dark);
     font-weight: 700;
     white-space: nowrap;
+    border-bottom: 2px solid var(--card-border);
 }
 
 .compare-table tr:last-child td {
     border-bottom: none;
 }
 
-.compare-table tr:hover {
+.compare-table tbody tr:hover {
     background-color: var(--hover-bg);
 }
 
 .model-highlight {
     font-weight: 700;
     color: var(--primary-green);
+}
+
+/* ==========================================
+   12. FOOTER
+   ========================================== */
+.footer-section {
+    text-align: center;
+    margin-top: 35px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 25px;
+}
+
+footer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
