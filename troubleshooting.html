@@ -1,147 +1,445 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fehlersuche & Problembehebung - Steyr Traktor</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steyr T80 - Betriebsstörungen & Behebung</title>
+  <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+      --border-color: #e2e8f0;
+      --primary-color: #c53030;
+      --subtext-color: #4a5568;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 25px;
+      box-sizing: border-box;
+    }
+
+    .category-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .issue-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .issue-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .item-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .item-list li {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .item-list li:last-child {
+      border-bottom: none;
+    }
+
+    .item-num {
+      font-weight: bold;
+      color: var(--primary-color);
+      display: inline-block;
+      width: 45px;
+    }
+
+    .cause {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .solution {
+      color: var(--subtext-color);
+      margin-top: 4px;
+      padding-left: 45px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- OBENE BUTTON-LEISTE -->
-    <div class="top-nav-buttons">
-        <a href="typenunterschiede.html" class="top-btn spec-btn">🚜 Typenunterschiede</a>
-        <a href="troubleshooting.html" class="top-btn trouble-btn">🔧 Finde den Fehler</a>
-    </div>
+<div class="container">
+  <h1>Steyr T80 – Fehlerdiagnose (Komplett)</h1>
+  <input type="text" id="searchInput" class="search-box" placeholder="Suchen nach Nr., Fehler, Ursache oder Lösung (z. B. Ventile, Öldruck, Glimmstift)...">
 
-    <!-- DARK MODE BUTTON -->
-    <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+  <div id="troubleshootingContainer"></div>
+</div>
 
-    <!-- HAUPT-CONTAINER -->
-    <div class="container">
+<script>
+const troubleshootingData = [
+  {
+    category: "1. Motor springt nicht an (Nr. 1 – 6)",
+    issues: [
+      {
+        symptom: "Motor lässt sich nicht starten",
+        items: [
+          {
+            nr: "1",
+            cause: "Feuchte, verschmutzte oder ungeeignete Zündlunten (Glimmstifte).",
+            solution: "Frische Zündlunten verwenden. Trocken aufbewahren, vor dem Einschrauben gut durchglühen/anzünden und den Startvorgang unverzüglich durchführen[cite: 3]."
+          },
+          {
+            nr: "2a",
+            cause: "Kraftstoffmangel durch Luftblasen im Filtersystem, der Einspritzpumpe oder den Leitungen.",
+            solution: "System entlüften: An Filter & Pumpe Entlüftungsschrauben öffnen, bis Diesel blasenfrei austritt[cite: 3]. An der Einspritzdüse Überwurfmutter lösen und den Motor kurbeln, bis Kraftstoff ohne Luftblasen austritt[cite: 3]."
+          },
+          {
+            nr: "2b",
+            cause: "Kraftstofftank vollständig leergefahren.",
+            solution: "Diesel nachfüllen und die gesamte Anlage (Filter, Pumpe, Leitungen) sorgfältig entlüften[cite: 3]."
+          },
+          {
+            nr: "2c",
+            cause: "Der Absperrhahn am Kraftstofffilter ist geschlossen.",
+            solution: "Absperrhahn öffnen und das System entlüften[cite: 3]."
+          },
+          {
+            nr: "2d",
+            cause: "Kraftstofffilter ist durch Schmutz zugesetzt.",
+            solution: "Filterelement ausbauen, gründlich reinigen und nach dem Wiedereinbau die Leitungen entlüften[cite: 3]."
+          },
+          {
+            nr: "3",
+            cause: "Einspritzpumpe fördert nicht oder ist defekt.",
+            solution: "Pumpe nicht selbst zerlegen; Instandsetzung ausschließlich in einer Fachkstatt durchführen lassen[cite: 3]."
+          },
+          {
+            nr: "4",
+            cause: "Einspritzdüse ist verschmutzt oder verkokt.",
+            solution: "Düse austauschen; die gereinigte oder defekte Düse in einer Fachkstatt überprüfen lassen[cite: 3]."
+          },
+          {
+            nr: "5",
+            cause: "Ein- oder Auslassventil klemmt in der Führung.",
+            solution: "Ventilführungen im Zylinderkopf ölen. Fremdkörper (z. B. Zündluntereste) vom Ventilsitz entfernen und Ventile neu einschleifen lassen[cite: 3]."
+          },
+          {
+            nr: "6a",
+            cause: "Ungenügende Verdichtung: Ventile schließen nicht dicht.",
+            solution: "Ventilsitze prüfen und Ventile in einer Fachkstatt einschleifen lassen[cite: 3]."
+          },
+          {
+            nr: "6b",
+            cause: "Ungenügende Verdichtung: Ventilspiel zu gering.",
+            solution: "Ventilspiel auf das vorgeschriebene Maß korrekt einstellen lassen[cite: 3]."
+          },
+          {
+            nr: "6c",
+            cause: "Ungenügende Verdichtung: Kolben/Ringe undicht.",
+            solution: "Kolben demontieren; je nach Verschleißbild Kolbenringe oder Zylinderlaufbuchse erneuern[cite: 3]."
+          },
+          {
+            nr: "6d",
+            cause: "Ungenügende Verdichtung: Ansaugluftfilter verstopft.",
+            solution: "Luftfilter ausbauen und gründlich reinigen[cite: 3]."
+          },
+          {
+            nr: "6e",
+            cause: "Ungenügende Verdichtung: Zylinderkopfdichtung undicht.",
+            solution: "Dichtung erneuern. Kopfschrauben über Kreuz gleichmäßig festziehen und bei warmer Maschine nochmals nachziehen[cite: 3]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: "2. Motor bleibt schlagartig oder allmählich stehen (Nr. 7 – 12)",
+    issues: [
+      {
+        symptom: "Unfreiwilliger Motorstopp während des Betriebs",
+        items: [
+          {
+            nr: "7",
+            cause: "Kraftstoffmangel bei frei auslaufendem Motor.",
+            solution: "Kraftstoffstand prüfen, Filter reinigen sowie Entlüftung durchführen[cite: 3]."
+          },
+          {
+            nr: "8",
+            cause: "Kolbenreiber / Kolbenfresser durch Ölmangel.",
+            solution: "Kolben ausbauen und beschädigte Bauteile ersetzen[cite: 3]. Tägliche Ölstandskontrolle beachten[cite: 3]!"
+          },
+          {
+            nr: "9",
+            cause: "Bruch der Hochdruck-Einspritzleitung.",
+            solution: "Leitung in einer Fachkstatt reparieren oder austauschen lassen[cite: 3]."
+          },
+          {
+            nr: "10",
+            cause: "Druckventilverschraubung an der Einspritzpumpe lose.",
+            solution: "Verschraubung wieder ordnungsgemäß festziehen[cite: 3]."
+          },
+          {
+            nr: "11",
+            cause: "Einspritzdüsennadel klemmt.",
+            solution: "Instandsetzung oder Tausch durch eine Fachkstatt durchführen lassen[cite: 3]."
+          },
+          {
+            nr: "12",
+            cause: "Undichte Ventile im Zylinderkopf.",
+            solution: "Ventilsitze reinigen bzw. einschleifen lassen[cite: 3]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: "3. Rauchentwicklung & Unregelmäßiger Lauf (Nr. 13 – 21)",
+    issues: [
+      {
+        symptom: "Qualm, Stöße oder Kurbelgehäuse-Entlüftungsrauch",
+        items: [
+          {
+            nr: "13",
+            cause: "Starke Überölung des Motors oder abgenutzte Ölabstreifringe.",
+            solution: "Ölstand im Kurbelgehäuse korrekt einstellen; bei Verschleiß Kolben ausbauen und Ölabstreifringe erneuern[cite: 3]."
+          },
+          {
+            nr: "14",
+            cause: "Nadel der Einspritzdüse hängt dauerhaft.",
+            solution: "Düse in einer Fachkstatt überprüfen und reinigen lassen[cite: 3]."
+          },
+          {
+            nr: "15",
+            cause: "Ungeeigneter oder minderwertiger Kraftstoff.",
+            solution: "Kraftstoff ablassen und vorgeschriebenen Reindiesel einfüllen[cite: 3]."
+          },
+          {
+            nr: "16",
+            cause: "Kolbenringe in den Ringnuten festgebrannt.",
+            solution: "Kolben ausbauen, Ringe lösen/reinigen und künftig nur hochwertige Markenöle verwenden[cite: 3]."
+          },
+          {
+            nr: "17",
+            cause: "Kolbenringe und Zylinderlaufbuchse stark abgenutzt.",
+            solution: "Laufbuchse und Kolbenringe in einer Fachkstatt erneuern lassen[cite: 3]."
+          },
+          {
+            nr: "18",
+            cause: "Stoßender Gang: Einspritzdüsennadel klemmt zeitweise.",
+            solution: "Einspritzdüse in der Fachkstatt instand setzen lassen[cite: 3]."
+          },
+          {
+            nr: "19",
+            cause: "Stoßender Gang: Förderbeginn/Einspritzzeitpunkt verstellt.",
+            solution: "Einspritzpumpe von Fachpersonal neu einstellen lassen[cite: 3]."
+          },
+          {
+            nr: "20",
+            cause: "Stoßender Gang: Pleuellager hat zu viel Spiel oder ist ausgelaufen (Schmiermangel/Verschmutzung).",
+            solution: "Sofort die Fachkstatt aufsuchen, um Folgeschäden an der Kurbelwelle zu vermeiden[cite: 3]."
+          },
+          {
+            nr: "21",
+            cause: "Starker Rauchaustritt am Öleinfüllstutzen (Verschleiß/Festbrennen).",
+            solution: "Bei stark klopfendem Geräusch Traktor sofort abstellen und abschleppen[cite: 3]! Kolben, Zylinderlaufbuchse sowie Ringe erneuern lassen[cite: 3]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: "4. Schmierung & Kühlung (Nr. 22 – 27)",
+    issues: [
+      {
+        symptom: "Probleme mit dem Öldruck oder Kühlwassersystem",
+        items: [
+          {
+            nr: "22a",
+            cause: "Öldruckanzeige fehlt: Öldruckmesser defekt.",
+            solution: "Anzeigeinstrument reparieren oder austauschen[cite: 3]."
+          },
+          {
+            nr: "22b",
+            cause: "Öldruckanzeige fehlt: Leitung zum Manometer gebrochen.",
+            solution: "Öldruckleitung instand setzen oder erneuern[cite: 3]."
+          },
+          {
+            nr: "22c",
+            cause: "Öldruckanzeige fehlt: Überdruckventil klemmt offen.",
+            solution: "Ventil in einer Fachkstatt reinigen lassen[cite: 3]."
+          },
+          {
+            nr: "22d",
+            cause: "Öldruckanzeige fehlt: Feder des Überdruckventils gebrochen.",
+            solution: "Ventilfeder durch Neuteil ersetzen[cite: 3]."
+          },
+          {
+            nr: "22e",
+            cause: "Öldruckanzeige fehlt: Zu wenig Schmieröl im Motorgehäuse.",
+            solution: "Motoröl sofort ergänzen und den Ölstand täglich kontrollieren[cite: 3]."
+          },
+          {
+            nr: "23",
+            cause: "Kühlwasser zu heiß: Kühlerabdeckung/Rollvorhang geschlossen.",
+            solution: "Rollvorhang dem Wärmebedarf entsprechend öffnen[cite: 3]."
+          },
+          {
+            nr: "24",
+            cause: "Kühlwasser zu heiß: Mangels Kühlflüssigkeit im System.",
+            solution: "Wasser langsam nachfüllen. Vorsicht: Kaltes Wasser nie schlagartig in den heißen Motor gießen (Gefahr von Spannungsrissen)[cite: 3]!"
+          },
+          {
+            nr: "25",
+            cause: "Kühlwasser zu heiß: Kühlernetz von außen verschmutzt.",
+            solution: "Kühlerrippen sorgfältig reinigen[cite: 3]."
+          },
+          {
+            nr: "26",
+            cause: "Kühlwasser zu heiß: Keilriemen der Wasserpumpe/Lichtmaschine lose.",
+            solution: "Keilriemen nachspannen; ist der Verstellweg erschöpft, Riemen erneuern[cite: 3]."
+          },
+          {
+            nr: "27",
+            cause: "Kühlwasser zu heiß: Starke Verschlammung oder Kesselstein im Kühlsystem.",
+            solution: "Kühlsystem gründlich reinigen, spülen und entkalken[cite: 3]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    category: "5. Bremsen & Mähantrieb (Nr. 28 – 31)",
+    issues: [
+      {
+        symptom: "Mechanische Mängel an Fahrwerk & Anbaugeräten",
+        items: [
+          {
+            nr: "28",
+            cause: "Handbremshebel hat zu viel Leerweg (Belagverschleiß).",
+            solution: "Handbremsgestänge über die Nachstellmutter nachjustieren[cite: 3]."
+          },
+          {
+            nr: "29",
+            cause: "Fußbremse zieht einseitig (ungleichmäßige Belagabnutzung durch Lenkbremsnutzung).",
+            solution: "Bremsen auf gleichmäßige Wirkung beidseitig einstellen[cite: 3]."
+          },
+          {
+            nr: "30",
+            cause: "Kupplung des Mähantriebs ratscht dauernd: Mähbalken blockiert.",
+            solution: "Hindernis am Mähbalken entfernen und Messer freimachen[cite: 3]."
+          },
+          {
+            nr: "31",
+            cause: "Kupplung des Mähantriebs ratscht dauernd: Zu geringe Federvorspannung.",
+            solution: "Druckfedern der Sicherheitskupplung nachspannen[cite: 3]."
+          }
+        ]
+      }
+    ]
+  }
+];
 
-        <div class="breadcrumb">
-            <a href="index.html">Hauptseite</a>
-            <span class="separator">›</span>
-            <span class="current">Fehlersuche & Diagnose</span>
-        </div>
+function renderData(data) {
+  const container = document.getElementById('troubleshootingContainer');
+  container.innerHTML = '';
 
-        <div class="header-section">
-            <span class="badge">Werkstatt-Diagnose</span>
-            <h1>Fehlersuche & Problembehebung</h1>
-            <p class="subtitle">Wähle die Baugruppe aus, um Ursachen und Reparaturanleitungen zu finden:</p>
+  if (data.length === 0) {
+    container.innerHTML = '<p style="text-align:center; padding: 20px;">Keine passenden Fehlerbehebungen gefunden.</p>';
+    return;
+  }
 
-            <div class="search-container">
-                <input type="text" id="site-search" placeholder="🔍 Symptom oder Bauteil suchen (z. B. Rauch, Gang springt raus)..." autocomplete="off">
-                <div id="search-results" class="search-results-popup"></div>
-            </div>
-        </div>
+  data.forEach(cat => {
+    const catTitle = document.createElement('div');
+    catTitle.className = 'category-title';
+    catTitle.innerText = cat.category;
+    container.appendChild(catTitle);
 
-        <div class="trouble-list">
-            <h2 class="section-title">🚜 Motor & Kraftstoffsystem</h2>
+    cat.issues.forEach(issue => {
+      const card = document.createElement('div');
+      card.className = 'issue-card';
 
-            <div class="trouble-card">
-                <div class="trouble-header">
-                    <h3>Motor startet nicht / dreht nur schwer durch</h3>
-                    <span class="time-tag">⏱️ 30 Min. - 2 Std.</span>
-                </div>
-                <p><strong>Mögliche Ursache:</strong> Batterie entladen, Luft im Dieselsystem oder Anlasser-Kollektor verschmutzt.</p>
-                <p><strong>Behebung:</strong> Kraftstoffsystem am Filter/Einspritzpumpe entlüften. Batterie-Spannung prüfen und Masseanschlüsse reinigen.</p>
-            </div>
+      let html = `<div class="issue-title">Symptom: ${issue.symptom}</div>`;
+      html += `<ul class="item-list">`;
+      
+      issue.items.forEach(item => {
+        html += `<li>
+          <div><span class="item-num">Nr. ${item.nr}</span> <span class="cause">Ursache:</span> ${item.cause}</div>
+          <div class="solution">➔ <strong>Abhilfe:</strong> ${item.solution}</div>
+        </li>`;
+      });
 
-            <div class="trouble-card">
-                <div class="trouble-header">
-                    <h3>Starker schwarzer Rauch unter Last</h3>
-                    <span class="time-tag">⏱️ 1 - 3 Std.</span>
-                </div>
-                <p><strong>Mögliche Ursache:</strong> Luftfilter verstopft, Einspritzdüse verkohlt oder Einspritzzeitpunkt verstellt.</p>
-                <p><strong>Behebung:</strong> Luftfilter reinigen/wechseln, Einspritzdüsen ausbauen und Spritzbild/Druck prüfen lassen.</p>
-            </div>
+      html += `</ul>`;
+      card.innerHTML = html;
+      container.appendChild(card);
+    });
+  });
+}
 
-            <div class="trouble-card">
-                <div class="trouble-header">
-                    <h3>Weißer Rauch aus dem Auspuff</h3>
-                    <span class="time-tag">⏱️ 3 - 6 Std.</span>
-                </div>
-                <p><strong>Mögliche Ursache:</strong> Kühlwasser tritt in den Verbrennungsraum ein (Zylinderkopfdichtung defekt).</p>
-                <p><strong>Behebung:</strong> Zylinderkopf demontieren, auf Verzug prüfen, Kopfdichtung erneuern und mit korrektem Drehmoment anziehen.</p>
-            </div>
+document.getElementById('searchInput').addEventListener('input', function(e) {
+  const query = e.target.value.toLowerCase();
+  
+  const filtered = troubleshootingData.map(cat => {
+    const matchingIssues = cat.issues.map(issue => {
+      const matchingItems = issue.items.filter(item => 
+        item.nr.toLowerCase().includes(query) ||
+        item.cause.toLowerCase().includes(query) ||
+        item.solution.toLowerCase().includes(query) ||
+        issue.symptom.toLowerCase().includes(query)
+      );
 
-            <h2 class="section-title" style="margin-top: 25px;">⚙️ Getriebe, Kupplung & Zapfwelle</h2>
+      return {
+        symptom: issue.symptom,
+        items: matchingItems
+      };
+    }).filter(issue => issue.items.length > 0);
 
-            <div class="trouble-card">
-                <div class="trouble-header">
-                    <h3>Gang springt unter Belastung raus</h3>
-                    <span class="time-tag">⏱️ 2 - 4 Std.</span>
-                </div>
-                <p><strong>Mögliche Ursache:</strong> Schaltgabel abgenutzt, Arretierfeder lahm oder Getriebezähne verschlissen.</p>
-                <p><strong>Behebung:</strong> Schaltdeckel demontieren, Arretierkugeln/-federn kontrollieren und Schaltgabelspiel prüfen.</p>
-            </div>
-        </div>
+    return {
+      category: cat.category,
+      issues: matchingIssues
+    };
+  }).filter(cat => cat.issues.length > 0);
 
-        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 25px; margin-bottom: 25px;">
-            💡 Tipp: Klicke auf ein Bild in den Anleitungen, um es zu vergrößern.
-        </p>
+  renderData(filtered);
+});
 
-        <div class="footer-section">
-            <footer>
-                &copy; Steyr Traktor Reparaturprojekt &bull; <a href="impressum.html" style="color: inherit;">Impressum</a>
-            </footer>
-        </div>
+// Initiales Rendern aller Daten
+renderData(troubleshootingData);
+</script>
 
-    </div>
-
-    <!-- LIGHTBOX OVERLAY -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vergrößerte Ansicht">
-    </div>
-
-    <!-- STEYR REGEN -->
-    <div id="steyr-rain" class="steyr-rain"></div>
-
-    <!-- JAVASCRIPT -->
-    <script>
-        const toggleBtn = document.getElementById('theme-toggle');
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-            toggleBtn.textContent = '☀️ Light Mode';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            let theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-            toggleBtn.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-            localStorage.setItem('theme', theme);
-        });
-
-        function openLightbox(src) {
-            const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('lightbox-img');
-            lbImg.src = src;
-            lb.style.display = 'flex';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-
-        const rainContainer = document.getElementById('steyr-rain');
-        if (rainContainer) {
-            for (let i = 0; i < 15; i++) {
-                let drop = document.createElement('div');
-                drop.className = 'steyr-drop';
-                drop.innerText = '🚜';
-                drop.style.left = Math.random() * 100 + 'vw';
-                drop.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                drop.style.animationDelay = Math.random() * 5 + 's';
-                rainContainer.appendChild(drop);
-            }
-        }
-    </script>
 </body>
 </html>
