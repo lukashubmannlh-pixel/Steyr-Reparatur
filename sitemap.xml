@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Startseite & Rechtliches -->
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/index.html</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/impressum.html</loc>
+    <priority>0.30</priority>
+  </url>
+
+  <!-- Übersicht & Allgemeines -->
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/typenunterschiede.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/troubleshooting.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Steyr T80 Anleitungen & Unterseiten -->
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80-getriebe.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80-getriebe-reparatur.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80-getriebe-service.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80-gehaeuse-aufbereitung.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80-lagerung.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80-kupplungsdrueckmechanismus.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lukashubmannlh-pixel.github.io/Steyr-Reparatur/t80-vorderachse.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
