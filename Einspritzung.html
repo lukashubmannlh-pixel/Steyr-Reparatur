@@ -12,9 +12,15 @@
     </script>
 </head>
 <body>
-<div
-    <a class="top-btn" onclick="history.back()">← Zurück</a>
+
+    <!-- Traktorregen Canvas Hintergrund -->
+    <canvas id="tractor-canvas"></canvas>
+
+    <!-- Navigation / Zurück-Button (Syntaxfehler korrigiert) -->
+    <div class="top-nav-buttons">
+        <a class="top-btn" onclick="history.back()" style="cursor: pointer;">← Zurück</a>
     </div>
+    
     <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
 
     <div class="container">
@@ -99,6 +105,7 @@
 
     </div>
 
+    <!-- Script für Dark Mode Toggle -->
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
         if (localStorage.getItem('theme') === 'dark') {
@@ -113,5 +120,9 @@
             localStorage.setItem('theme', theme);
         });
     </script>
+
+    <!-- Einbindung des zentralen Scripts (z.B. für den Traktorregen) -->
+    <script src="script.js"></script>
+
 </body>
 </html>
