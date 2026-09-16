@@ -322,6 +322,8 @@ h1 {
     top: 20px;
     left: 20px;
     display: flex;
+    flex-direction: column;  /* Ordnet die Buttons untereinander an */
+    align-items: flex-start; /* Richtet die Buttons linksbündig aus */
     gap: 10px;
     z-index: 1000;
 }
